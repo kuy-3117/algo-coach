@@ -11,13 +11,29 @@ const {
   computeStats,
   buildToday,
   scoreProblem,
+  applyPlanSnapshot,
+  generatePlanSkeleton,
+  scoreGoalMatch,
+  weeklyEligibility,
 } = require('./algo');
 const {
   BUILTIN_PROBLEMS,
+  createAppServer,
   ensureDataFiles,
   appendEvent,
   isLoopbackAddress,
+  writeExportBundle,
 } = require('./server');
+const {
+  normalizeAiConfig,
+  requestStructuredReport,
+  requestProblemMetadata,
+  validateAiSelection,
+} = require('./ai');
+const {
+  importProblems,
+  parseCsv,
+} = require('./importer');
 
 const baseConfig = {
   version: 1,
@@ -254,6 +270,103 @@ test('每日总上限可随配置提高，而不修改排题代码', () => {
   assert.equal(plan.items.length, 4);
 });
 
+test('相同日期和画像下每日前排题稳定', () => {
+  const problems = Array.from({ length: 10 }, (_, index) =>
+    problem(`stable-${index}`, {
+      tags: [baseConfig.scopeTags[index % baseConfig.scopeTags.length]],
+      estMinutes: 20,
+    }),
+  );
+  const build = () =>
+    buildToday({
+      problems,
+      ps: {},
+      ts: {},
+      config: baseConfig,
+      today: '2026-11-17',
+      budget: 90,
+      events: [],
+    }).items.map((item) => item.p.id);
+
+  assert.deepEqual(build(), build());
+});
+
+test('计划快照只替换被换掉的一道题并保留其他卡片', () => {
+  const problems = ['p1', 'p2', 'p3', 'p4'].map((id) => problem(id));
+  const basePlan = {
+    items: problems.slice(0, 3).map((item) => ({
+      p: item,
+      kind: 'new',
+      reason: `推荐 ${item.id}`,
+      estMinutes: 30,
+    })),
+    usedMinutes: 90,
+    budget: 90,
+  };
+  const event = {
+    type: 'plan',
+    id: 'plan-1',
+    date: '2026-11-17',
+    ts: '2026-11-17T10:00:00+08:00',
+    items: [
+      { problemId: 'p1', kind: 'new', reason: '推荐 p1' },
+      { problemId: 'p4', kind: 'new', reason: '替换 p2' },
+      { problemId: 'p3', kind: 'new', reason: '推荐 p3' },
+    ],
+  };
+  const applied = applyPlanSnapshot(basePlan, [event], problems, [], '2026-11-17');
+
+  assert.deepEqual(applied.items.map((item) => item.p.id), ['p1', 'p4', 'p3']);
+});
+
+test('目标阶段标签提高候选匹配度，但仅从候选池应用', () => {
+  const focused = problem('focused', { tags: ['动态规划'] });
+  const generic = problem('generic', { tags: ['数组'] });
+  const profile = {
+    competition: '蓝桥杯',
+    focusTags: ['动态规划'],
+    preferredPlatforms: ['Codeforces'],
+  };
+  const phase = { focusTags: ['动态规划'] };
+
+  assert.ok(
+    scoreGoalMatch(focused, profile, phase) >
+      scoreGoalMatch(generic, profile, phase),
+  );
+});
+
+test('规划书根据目标日期生成连续且不越界的阶段', () => {
+  const plan = generatePlanSkeleton({
+    profile: {
+      goalDate: '2027-01-16',
+      weeklyMinutes: 300,
+      focusTags: ['动态规划', '图论'],
+    },
+    today: '2026-11-17',
+    scopeTags: baseConfig.scopeTags,
+  });
+
+  assert.equal(plan.startDate, '2026-11-17');
+  assert.equal(plan.endDate, '2027-01-16');
+  assert.equal(plan.phases.length, 3);
+  assert.equal(plan.phases[0].startDate, plan.startDate);
+  assert.equal(plan.phases.at(-1).endDate, plan.endDate);
+  for (let index = 1; index < plan.phases.length; index++) {
+    assert.equal(addDays(plan.phases[index - 1].endDate, 1), plan.phases[index].startDate);
+  }
+});
+
+test('最近七天至少三个活跃日才能生成周报', () => {
+  const twoDays = [
+    attempt('p1', '2026-11-16', 'solved'),
+    attempt('p2', '2026-11-17', 'failed'),
+  ];
+  const threeDays = [...twoDays, attempt('p3', '2026-11-15', 'solved')];
+
+  assert.equal(weeklyEligibility(twoDays, '2026-11-17').eligible, false);
+  assert.equal(weeklyEligibility(threeDays, '2026-11-17').eligible, true);
+});
+
 test('内置自愈题单与题库文件一致且满足题单约束', () => {
   const fileProblems = JSON.parse(
     fs.readFileSync(path.join(__dirname, 'data', 'problems.json'), 'utf8'),
@@ -301,12 +414,31 @@ test('缺失数据目录会创建完整的空数据文件', () => {
     assert.equal(fs.existsSync(path.join(tempDir, 'problems.json')), true);
     assert.equal(fs.existsSync(path.join(tempDir, 'data.json')), true);
     assert.equal(fs.existsSync(path.join(tempDir, 'backup')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'plan.json')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'reports.json')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'problem-packs')), true);
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(tempDir, 'data.json'), 'utf8')), {
       version: 1,
       events: [],
     });
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('完整导出写入项目 exports 目录且不包含密钥字段', () => {
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'algo-coach-export-'));
+  const dataDir = path.join(rootDir, 'data');
+  try {
+    ensureDataFiles(dataDir, { config: baseConfig, problems: [problem('p1')] });
+    const result = writeExportBundle(rootDir, dataDir);
+    const exported = JSON.parse(fs.readFileSync(result.filePath, 'utf8'));
+    assert.equal(path.dirname(result.filePath), path.join(rootDir, 'exports'));
+    assert.equal(exported.data.events.length, 0);
+    assert.equal(exported.problems.length, 1);
+    assert.equal(JSON.stringify(exported).includes('apiKey'), false);
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
   }
 });
 
@@ -350,16 +482,275 @@ test('事件写入前备份，并且只保留最近五份', () => {
   }
 });
 
-let failures = 0;
-for (const { name, fn } of tests) {
-  try {
-    fn();
-    process.stdout.write(`PASS ${name}\n`);
-  } catch (error) {
-    failures++;
-    process.stderr.write(`FAIL ${name}\n${error.stack}\n`);
-  }
-}
+test('AI 配置优先使用 DeepSeek 环境变量和默认模型', () => {
+  const config = normalizeAiConfig(
+    { baseUrl: '', model: '' },
+    { DEEPSEEK_API_KEY: 'ds-key', OPENAI_API_KEY: 'other-key' },
+  );
 
-process.stdout.write(`\n${tests.length - failures} passed, ${failures} failed\n`);
-process.exitCode = failures ? 1 : 0;
+  assert.equal(config.baseUrl, 'https://api.deepseek.com');
+  assert.equal(config.model, 'deepseek-flash');
+  assert.equal(config.apiKey, 'ds-key');
+  assert.equal(config.configured, true);
+});
+
+test('AI 结构化响应支持 JSON 代码围栏并校验日报字段', async () => {
+  const fakeFetch = async () => ({
+    ok: true,
+    status: 200,
+    async json() {
+      return {
+        choices: [
+          {
+            message: {
+              content:
+                '```json\n{"headline":"今天完成了复盘","facts":["完成 1 题"],"issues":["边界检查不足"],"tomorrowFocus":"先复习边界","encouragement":"继续保持记录"}\n```',
+            },
+          },
+        ],
+      };
+    },
+  });
+  const report = await requestStructuredReport({
+    config: {
+      baseUrl: 'https://api.deepseek.com',
+      model: 'deepseek-flash',
+      apiKey: 'test-key',
+    },
+    type: 'daily',
+    input: { today: '2026-11-17', attempts: [] },
+    fetchImpl: fakeFetch,
+  });
+
+  assert.equal(report.headline, '今天完成了复盘');
+  assert.deepEqual(report.facts, ['完成 1 题']);
+});
+
+test('AI 选题结果只能包含候选池中的唯一题目', () => {
+  const selected = validateAiSelection(
+    {
+      selections: [
+        { problemId: 'p1', reason: '补强动态规划' },
+        { problemId: 'unknown', reason: '不存在' },
+        { problemId: 'p1', reason: '重复' },
+      ],
+    },
+    ['p1', 'p2', 'p3'],
+  );
+
+  assert.deepEqual(selected.map((item) => item.problemId), ['p1']);
+});
+
+test('AI 题库元数据只能修改既有导入项和范围内标签', async () => {
+  const fakeFetch = async () => ({
+    ok: true,
+    status: 200,
+    async json() {
+      return {
+        choices: [{
+          message: {
+            content: JSON.stringify({
+              problems: [
+                { id: 'import-1', difficulty: 2, estMinutes: 45, tags: ['动态规划', '不存在的标签'] },
+              ],
+            }),
+          },
+        }],
+      };
+    },
+  });
+  const result = await requestProblemMetadata({
+    config: { baseUrl: 'https://api.deepseek.com', model: 'deepseek-flash', apiKey: 'test-key' },
+    problems: [{ id: 'import-1', title: '新题', url: 'https://example.com/p' }],
+    scopeTags: ['动态规划', '图论'],
+    fetchImpl: fakeFetch,
+  });
+
+  assert.deepEqual(result[0].tags, ['动态规划']);
+  assert.equal(result[0].estMinutes, 45);
+});
+
+test('JSON 题库导入会拒绝非法链接并按 URL 去重', () => {
+  const existing = [
+    {
+      id: 'old',
+      title: '已有题',
+      url: 'https://codeforces.com/problemset/problem/4/A',
+      platform: 'Codeforces',
+      difficulty: 1,
+      estMinutes: 20,
+      tags: ['数组'],
+    },
+  ];
+  const result = importProblems(
+    JSON.stringify([
+      {
+        title: '重复题',
+        url: 'https://codeforces.com/problemset/problem/4/A',
+        platform: 'Codeforces',
+        difficulty: 1,
+        tags: ['数组'],
+      },
+      {
+        title: '新题',
+        url: 'https://www.luogu.com.cn/problem/P1048',
+        platform: '洛谷',
+        difficulty: 2,
+        tags: ['动态规划'],
+      },
+      {
+        title: '非法题',
+        url: 'javascript:alert(1)',
+        difficulty: 1,
+        tags: ['数组'],
+      },
+    ]),
+    existing,
+    'json',
+  );
+
+  assert.equal(result.added.length, 1);
+  assert.equal(result.added[0].title, '新题');
+  assert.equal(result.duplicates, 1);
+  assert.ok(result.errors.length >= 1);
+});
+
+test('CSV 题库支持带逗号的引用字段', () => {
+  const rows = parseCsv(
+    'title,url,platform,difficulty,estMinutes,tags\n"题目,带逗号",https://example.com/p,Codeforces,2,40,"数组;动态规划"\n',
+  );
+
+  assert.equal(rows[0].title, '题目,带逗号');
+  assert.deepEqual(rows[0].tags, ['数组', '动态规划']);
+});
+
+test('换题接口只替换目标题并保持其他题不变', async () => {
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'algo-coach-swap-'));
+  const dataDir = path.join(rootDir, 'data');
+  const publicDir = path.join(rootDir, 'public');
+  fs.mkdirSync(publicDir, { recursive: true });
+  try {
+    ensureDataFiles(dataDir, {
+      config: { ...baseConfig, maxDailyProblems: 3, maxNewPerDay: 3 },
+      problems: ['p1', 'p2', 'p3', 'p4', 'p5'].map((id) => problem(id)),
+    });
+    const server = createAppServer({ rootDir, dataDir, publicDir });
+    await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+    const address = server.address();
+    const baseUrl = `http://127.0.0.1:${address.port}`;
+    try {
+      const before = await (await fetch(`${baseUrl}/api/state`)).json();
+      const beforeIds = before.plan.items.map((item) => item.p.id);
+      const response = await fetch(`${baseUrl}/api/swap`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ date: '2026-11-17', problemId: beforeIds[0] }),
+      });
+      const after = await response.json();
+      const afterIds = after.state.plan.items.map((item) => item.p.id);
+      assert.notEqual(afterIds[0], beforeIds[0]);
+      assert.deepEqual(afterIds.slice(1), beforeIds.slice(1));
+    } finally {
+      await new Promise((resolve) => server.close(resolve));
+    }
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+});
+
+test('画像接口保存目标并生成三段规划书', async () => {
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'algo-coach-profile-'));
+  const dataDir = path.join(rootDir, 'data');
+  const publicDir = path.join(rootDir, 'public');
+  fs.mkdirSync(publicDir, { recursive: true });
+  try {
+    ensureDataFiles(dataDir, {
+      config: baseConfig,
+      problems: [problem('p1')],
+    });
+    const server = createAppServer({ rootDir, dataDir, publicDir });
+    await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+    const baseUrl = `http://127.0.0.1:${server.address().port}`;
+    try {
+      const response = await fetch(`${baseUrl}/api/profile`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          profile: {
+            competition: '蓝桥杯',
+            group: '大学 B 组',
+            language: 'C++',
+            goalDate: '2027-01-16',
+            weeklyMinutes: 300,
+            preferredPlatforms: ['洛谷', 'Codeforces'],
+            focusTags: ['动态规划', '图论'],
+            currentLevel: '普及组基础',
+            notes: '',
+          },
+        }),
+      });
+      const payload = await response.json();
+      assert.equal(response.status, 200);
+      assert.equal(payload.state.config.profile.competition, '蓝桥杯');
+      assert.equal(payload.state.practicePlan.phases.length, 3);
+      assert.equal(payload.state.practicePlan.endDate, '2027-01-16');
+    } finally {
+      await new Promise((resolve) => server.close(resolve));
+    }
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+});
+
+test('记录接口保存用户选择的完成日期和时间', async () => {
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'algo-coach-time-'));
+  const dataDir = path.join(rootDir, 'data');
+  const publicDir = path.join(rootDir, 'public');
+  fs.mkdirSync(publicDir, { recursive: true });
+  try {
+    ensureDataFiles(dataDir, {
+      config: baseConfig,
+      problems: [problem('p1')],
+    });
+    const server = createAppServer({ rootDir, dataDir, publicDir });
+    await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+    const baseUrl = `http://127.0.0.1:${server.address().port}`;
+    try {
+      const response = await fetch(`${baseUrl}/api/record`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          problemId: 'p1',
+          completedAt: '2026-11-16T21:35',
+          result: 'solved',
+          minutes: 25,
+          note: '用户补录的完成时间',
+        }),
+      });
+      const payload = await response.json();
+      assert.equal(response.status, 200);
+      assert.equal(payload.event.date, '2026-11-16');
+      assert.match(payload.event.ts, /^2026-11-16T21:35:00/);
+    } finally {
+      await new Promise((resolve) => server.close(resolve));
+    }
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+});
+
+(async () => {
+  let failures = 0;
+  for (const { name, fn } of tests) {
+    try {
+      await fn();
+      process.stdout.write(`PASS ${name}\n`);
+    } catch (error) {
+      failures++;
+      process.stderr.write(`FAIL ${name}\n${error.stack}\n`);
+    }
+  }
+
+  process.stdout.write(`\n${tests.length - failures} passed, ${failures} failed\n`);
+  process.exitCode = failures ? 1 : 0;
+})();

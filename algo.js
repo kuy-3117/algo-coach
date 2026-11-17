@@ -46,6 +46,26 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+function hashString(value) {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index++) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function seededRandom(seed) {
+  let state = typeof seed === 'number' ? seed >>> 0 : hashString(String(seed));
+  return () => {
+    state += 0x6d2b79f5;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 function estMinutes(problem) {
   const value = Number(problem?.estMinutes);
   if (Number.isFinite(value) && value > 0) {
@@ -295,7 +315,149 @@ function scoreProblem(problem, ps, ts, config, events = [], today, problems = []
   if (today && recentSwapPenalty(problem, events, today, problems, ts)) {
     score *= 0.5;
   }
+  if (config.profile) {
+    const activePhase = getActivePhase(config._activePlan, today);
+    const goalMatch = scoreGoalMatch(problem, config.profile, activePhase);
+    score = score * 0.8 + goalMatch * 0.2;
+  }
   return clamp(score, 0, 1);
+}
+
+function scoreGoalMatch(problem, profile = {}, activePhase = null) {
+  const focusTags = new Set([
+    ...(Array.isArray(profile.focusTags) ? profile.focusTags : []),
+    ...(Array.isArray(activePhase?.focusTags) ? activePhase.focusTags : []),
+  ]);
+  const problemTags = Array.isArray(problem.tags) ? problem.tags : [];
+  const tagMatch = problemTags.some((tag) => focusTags.has(tag)) ? 1 : 0;
+  const preferredPlatforms = Array.isArray(profile.preferredPlatforms)
+    ? profile.preferredPlatforms
+    : [];
+  const platformMatch = preferredPlatforms.length
+    ? preferredPlatforms.includes(problem.platform) ? 1 : 0
+    : 0.5;
+  const competition = profile.competition || '';
+  const problemCompetitions = Array.isArray(problem.competitions)
+    ? problem.competitions
+    : [];
+  const competitionMatch = competition
+    ? problemCompetitions.includes(competition) ? 1 : 0.35
+    : 0.5;
+  return clamp(tagMatch * 0.5 + platformMatch * 0.2 + competitionMatch * 0.3, 0, 1);
+}
+
+function getActivePhase(plan, today) {
+  if (!plan || !Array.isArray(plan.phases)) {
+    return null;
+  }
+  return (
+    plan.phases.find(
+      (phase) => phase.startDate <= today && today <= phase.endDate,
+    ) || null
+  );
+}
+
+function splitTags(tags, index) {
+  if (!tags.length) {
+    return [];
+  }
+  return tags.filter((_, tagIndex) => tagIndex % 3 === index);
+}
+
+function generatePlanSkeleton({ profile = {}, today, scopeTags = [] }) {
+  const goalDate = profile.goalDate;
+  if (!goalDate || !/^\d{4}-\d{2}-\d{2}$/.test(goalDate)) {
+    throw new Error('请先填写有效的目标日期');
+  }
+  const totalDays = daysBetween(today, goalDate) + 1;
+  if (totalDays < 7) {
+    throw new Error('目标日期至少需要距今天 7 天');
+  }
+  const focusTags = Array.isArray(profile.focusTags) && profile.focusTags.length
+    ? profile.focusTags
+    : scopeTags;
+  const weeklyMinutes = Math.max(60, Math.round(Number(profile.weeklyMinutes) || 300));
+  const firstEnd = Math.max(1, Math.floor(totalDays * 0.25));
+  const secondEnd = Math.max(firstEnd + 1, Math.floor(totalDays * 0.7));
+  const segments = [
+    ['基础诊断', 0, firstEnd - 1],
+    ['专项强化', firstEnd, secondEnd - 1],
+    ['冲刺复盘', secondEnd, totalDays - 1],
+  ];
+  const phases = segments.map(([name, startOffset, endOffset], index) => ({
+    id: `phase-${index + 1}`,
+    name,
+    startDate: addDays(today, startOffset),
+    endDate: addDays(today, endOffset),
+    focusTags: splitTags(focusTags, index),
+    minutesPerWeek: weeklyMinutes,
+    milestones:
+      index === 0
+        ? ['完成一次弱项诊断', '建立复习错题基线']
+        : index === 1
+          ? ['重点标签通过率提升', '按计划完成到期复习']
+          : ['完成限时模拟', '集中修复高频边界错误'],
+  }));
+  return {
+    version: 1,
+    startDate: today,
+    endDate: goalDate,
+    weeklyMinutes,
+    focusTags,
+    phases,
+    source: 'rules',
+  };
+}
+
+function weeklyEligibility(events, today) {
+  const start = addDays(today, -6);
+  const attempts = events.filter(
+    (event) => event.type === 'attempt' && event.date >= start && event.date <= today,
+  );
+  const activeDays = new Set(attempts.map((event) => event.date)).size;
+  return {
+    eligible: activeDays >= 3,
+    activeDays,
+    attemptCount: attempts.length,
+    startDate: start,
+    endDate: today,
+  };
+}
+
+function applyPlanSnapshot(basePlan, events, problems, attempts, today) {
+  const snapshot = events
+    .filter((event) => event.type === 'plan' && event.date === today && Array.isArray(event.items))
+    .at(-1);
+  if (!snapshot) {
+    return basePlan;
+  }
+  const problemMap = new Map(problems.map((problemItem) => [problemItem.id, problemItem]));
+  const completed = new Set(
+    attempts
+      .filter((event) => event.type === 'attempt' && event.date === today)
+      .map((event) => event.problemId),
+  );
+  const items = snapshot.items
+    .filter((item) => !completed.has(item.problemId))
+    .map((item) => {
+      const problemItem = problemMap.get(item.problemId);
+      if (!problemItem) {
+        return null;
+      }
+      return {
+        p: problemItem,
+        kind: item.kind || 'new',
+        reason: item.reason || '按今日计划继续练习',
+        estMinutes: estMinutes(problemItem),
+        ...(item.score ? { score: item.score } : {}),
+      };
+    })
+    .filter(Boolean);
+  return {
+    ...basePlan,
+    items,
+    usedMinutes: items.reduce((sum, item) => sum + item.estMinutes, 0),
+  };
 }
 
 function reviewReason(problem, state, today) {
@@ -337,7 +499,7 @@ function buildToday({
   today,
   budget,
   events = [],
-  random = Math.random,
+  random,
 }) {
   const picked = [];
   const pickedIds = new Set();
@@ -430,12 +592,22 @@ function buildToday({
     );
   });
 
+  const profile = config.profile || null;
+  const activePhase = getActivePhase(config._activePlan, today);
+  const stableSeed = [
+    today,
+    profile?.competition || '',
+    profile?.goalDate || '',
+    (profile?.focusTags || []).join(','),
+    activePhase?.id || '',
+  ].join('|');
+  const randomFn = random || seededRandom(stableSeed);
   const scored = pool
     .map((problem) => ({
       p: problem,
       score:
         scoreProblem(problem, ps, ts, config, events, today, problems) *
-        (0.9 + random() * 0.2),
+        (0.9 + randomFn() * 0.2),
     }))
     .sort((left, right) => right.score - left.score);
 
@@ -469,6 +641,7 @@ function buildToday({
 module.exports = {
   DIFFICULTY_MINUTES,
   addDays,
+  applyPlanSnapshot,
   buildHeatmap,
   buildToday,
   clamp,
@@ -476,11 +649,17 @@ module.exports = {
   daysBetween,
   deriveState,
   estMinutes,
+  generatePlanSkeleton,
+  getActivePhase,
   getBudgetForDate,
+  hashString,
   isSwappedForToday,
   localDate,
   problemPassRate,
+  scoreGoalMatch,
   scoreProblem,
+  seededRandom,
   startOfWeek,
   weakestTag,
+  weeklyEligibility,
 };

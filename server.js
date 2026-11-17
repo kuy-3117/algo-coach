@@ -8,12 +8,25 @@ const path = require('node:path');
 const { URL } = require('node:url');
 const {
   addDays,
+  applyPlanSnapshot,
   buildToday,
   computeStats,
   deriveState,
+  generatePlanSkeleton,
+  getActivePhase,
   getBudgetForDate,
+  hashString,
   localDate,
+  weeklyEligibility,
 } = require('./algo');
+const {
+  normalizeAiConfig,
+  requestAiSelection,
+  requestProblemMetadata,
+  requestStructuredReport,
+  validateAiSelection,
+} = require('./ai');
+const { importProblems } = require('./importer');
 
 const PORT = 8787;
 const HOST = '0.0.0.0';
@@ -29,6 +42,7 @@ const DEFAULT_CONFIG = {
   reviewIntervals: [1, 3, 7, 21, 45],
   tagColdDays: 14,
   recentDays: 7,
+  theme: 'warm',
   scopeTags: [
     '数组',
     '哈希表',
@@ -52,6 +66,31 @@ const DEFAULT_CONFIG = {
     '排序',
   ],
   weights: { weak: 0.4, fresh: 0.25, level: 0.2, prereq: 0.15 },
+  profile: {
+    competition: '',
+    group: '',
+    language: 'C++',
+    goalDate: '',
+    weeklyMinutes: 300,
+    preferredPlatforms: ['洛谷', 'Codeforces'],
+    focusTags: [],
+    currentLevel: '',
+    notes: '',
+  },
+  ai: {
+    baseUrl: 'https://api.deepseek.com',
+    model: 'deepseek-flash',
+  },
+};
+
+const DEFAULT_REPORTS = { version: 1, reports: [] };
+const DEFAULT_PLAN = {
+  version: 1,
+  startDate: null,
+  endDate: null,
+  weeklyMinutes: 300,
+  phases: [],
+  source: 'unconfigured',
 };
 
 const BUILTIN_PROBLEMS = [
@@ -102,6 +141,9 @@ const MIME_TYPES = {
   '.json': 'application/json; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
 };
 
@@ -174,11 +216,14 @@ function backupFile(filePath, backupDir) {
 function ensureDataFiles(dataDir, defaults = {}) {
   fs.mkdirSync(dataDir, { recursive: true });
   fs.mkdirSync(path.join(dataDir, 'backup'), { recursive: true });
+  fs.mkdirSync(path.join(dataDir, 'problem-packs'), { recursive: true });
 
   const files = [
     ['config.json', defaults.config || DEFAULT_CONFIG],
     ['problems.json', defaults.problems || BUILTIN_PROBLEMS],
     ['data.json', { version: 1, events: [] }],
+    ['plan.json', defaults.plan || DEFAULT_PLAN],
+    ['reports.json', defaults.reports || DEFAULT_REPORTS],
   ];
 
   for (const [name, fallback] of files) {
@@ -190,15 +235,58 @@ function ensureDataFiles(dataDir, defaults = {}) {
 }
 
 function appendEvent(dataDir, event) {
+  return appendEvents(dataDir, [event])[0];
+}
+
+function appendEvents(dataDir, events) {
   const dataPath = path.join(dataDir, 'data.json');
   const data = readJson(dataPath);
   if (!data || !Array.isArray(data.events)) {
     throw new Error('data.json 必须包含 events 数组');
   }
   backupFile(dataPath, path.join(dataDir, 'backup'));
-  data.events.push(event);
+  data.events.push(...events);
   atomicWriteJson(dataPath, data);
-  return event;
+  return events;
+}
+
+function readConfig(dataDir) {
+  const raw = readJson(path.join(dataDir, 'config.json'));
+  return {
+    ...DEFAULT_CONFIG,
+    ...raw,
+    profile: { ...DEFAULT_CONFIG.profile, ...(raw.profile || {}) },
+    ai: { ...DEFAULT_CONFIG.ai, ...(raw.ai || {}) },
+    weights: { ...DEFAULT_CONFIG.weights, ...(raw.weights || {}) },
+  };
+}
+
+function sanitizeConfigForExport(config) {
+  return {
+    ...config,
+    ai: {
+      baseUrl: config.ai?.baseUrl || DEFAULT_CONFIG.ai.baseUrl,
+      model: config.ai?.model || DEFAULT_CONFIG.ai.model,
+    },
+  };
+}
+
+function writeExportBundle(rootDir, dataDir) {
+  const exportsDir = path.join(rootDir, 'exports');
+  fs.mkdirSync(exportsDir, { recursive: true });
+  const bundle = {
+    version: 2,
+    exportedAt: localIsoTimestamp(),
+    config: sanitizeConfigForExport(readConfig(dataDir)),
+    practicePlan: readJson(path.join(dataDir, 'plan.json')),
+    problems: readJson(path.join(dataDir, 'problems.json')),
+    data: readJson(path.join(dataDir, 'data.json')),
+    reports: readJson(path.join(dataDir, 'reports.json')),
+  };
+  const fileName = `algo-coach-export-${backupTimestamp()}.json`;
+  const filePath = path.join(exportsDir, fileName);
+  atomicWriteJson(filePath, bundle);
+  return { filePath, fileName, bundle };
 }
 
 function isLoopbackAddress(address) {
@@ -224,6 +312,37 @@ function localIsoTimestamp(date = new Date()) {
     `${pad(date.getSeconds())}${sign}${pad(Math.floor(absoluteOffset / 60))}:` +
     `${pad(absoluteOffset % 60)}`
   );
+}
+
+function normalizeCompletedAt(value) {
+  if (!value) {
+    const now = new Date();
+    return { date: localDate(now), ts: localIsoTimestamp(now) };
+  }
+  const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/.exec(
+    String(value),
+  );
+  if (!match) {
+    throw new Error('完成时间格式无效');
+  }
+  const date = new Date(
+    Number(match[1]),
+    Number(match[2]) - 1,
+    Number(match[3]),
+    Number(match[4]),
+    Number(match[5]),
+    Number(match[6] || 0),
+  );
+  if (
+    date.getFullYear() !== Number(match[1]) ||
+    date.getMonth() !== Number(match[2]) - 1 ||
+    date.getDate() !== Number(match[3]) ||
+    date.getHours() !== Number(match[4]) ||
+    date.getMinutes() !== Number(match[5])
+  ) {
+    throw new Error('完成时间无效');
+  }
+  return { date: localDate(date), ts: localIsoTimestamp(date) };
 }
 
 function eventId(now = new Date()) {
@@ -302,6 +421,9 @@ function validateConfigPatch(current, patch) {
     'recentDays',
     'scopeTags',
     'weights',
+    'profile',
+    'ai',
+    'theme',
   ]);
   for (const key of Object.keys(patch)) {
     if (!allowed.has(key)) {
@@ -355,6 +477,19 @@ function validateConfigPatch(current, patch) {
   ) {
     throw new Error('weights 必须包含非负数字 weak、fresh、level、prereq');
   }
+  next.profile = validateProfilePatch(current.profile || {}, patch.profile || {});
+  const ai = { ...DEFAULT_CONFIG.ai, ...(current.ai || {}), ...(patch.ai || {}) };
+  if (!/^https?:\/\//.test(String(ai.baseUrl || ''))) {
+    throw new Error('AI Base URL 必须是有效的 http(s) 地址');
+  }
+  if (!String(ai.model || '').trim()) {
+    throw new Error('AI 模型名不能为空');
+  }
+  next.ai = {
+    baseUrl: String(ai.baseUrl).replace(/\/+$/, ''),
+    model: String(ai.model).trim(),
+  };
+  next.theme = 'warm';
   return next;
 }
 
@@ -381,34 +516,158 @@ function normalizeSnapshot(snapshot) {
   };
 }
 
-function createState(dataDir, remoteAddress, today = localDate()) {
-  const config = readJson(path.join(dataDir, 'config.json'));
+function validateProfilePatch(current, patch) {
+  if (!patch || typeof patch !== 'object' || Array.isArray(patch)) {
+    throw new Error('目标画像必须是 JSON 对象');
+  }
+  const allowed = new Set([
+    'competition',
+    'group',
+    'language',
+    'goalDate',
+    'weeklyMinutes',
+    'preferredPlatforms',
+    'focusTags',
+    'currentLevel',
+    'notes',
+  ]);
+  for (const key of Object.keys(patch)) {
+    if (!allowed.has(key)) {
+      throw new Error(`不支持的目标画像字段：${key}`);
+    }
+  }
+  const next = { ...DEFAULT_CONFIG.profile, ...current, ...patch };
+  if (next.goalDate && !isValidDate(next.goalDate)) {
+    throw new Error('目标日期格式必须是 YYYY-MM-DD');
+  }
+  if (
+    !Number.isInteger(Number(next.weeklyMinutes)) ||
+    Number(next.weeklyMinutes) < 60 ||
+    Number(next.weeklyMinutes) > 10080
+  ) {
+    throw new Error('每周可用时间必须是 60 到 10080 分钟的整数');
+  }
+  if (
+    !Array.isArray(next.preferredPlatforms) ||
+    next.preferredPlatforms.some((platform) => typeof platform !== 'string')
+  ) {
+    throw new Error('preferredPlatforms 必须是字符串数组');
+  }
+  if (
+    !Array.isArray(next.focusTags) ||
+    next.focusTags.some((tag) => typeof tag !== 'string')
+  ) {
+    throw new Error('focusTags 必须是字符串数组');
+  }
+  return {
+    ...next,
+    weeklyMinutes: Number(next.weeklyMinutes),
+    competition: String(next.competition || '').slice(0, 80),
+    group: String(next.group || '').slice(0, 80),
+    language: String(next.language || '').slice(0, 40),
+    currentLevel: String(next.currentLevel || '').slice(0, 80),
+    notes: String(next.notes || '').slice(0, 2000),
+  };
+}
+
+function appendReport(dataDir, report) {
+  const reportsPath = path.join(dataDir, 'reports.json');
+  const file = readJson(reportsPath);
+  if (!Array.isArray(file.reports)) {
+    throw new Error('reports.json 必须包含 reports 数组');
+  }
+  file.reports.push(report);
+  atomicWriteJson(reportsPath, file);
+  return report;
+}
+
+function buildCandidatePool(dataDir, today) {
+  const config = readConfig(dataDir);
   const problems = readJson(path.join(dataDir, 'problems.json'));
   const data = readJson(path.join(dataDir, 'data.json'));
+  const practicePlan = readJson(path.join(dataDir, 'plan.json'));
+  const scoringConfig = {
+    ...config,
+    maxDailyProblems: Math.max(8, Math.min(12, problems.length)),
+    maxNewPerDay: Math.max(8, Math.min(12, problems.length)),
+    _activePlan: practicePlan,
+  };
+  const { ps, ts } = deriveState(data.events, problems, scoringConfig);
+  const budget = getBudgetForDate(data.events, config, today);
+  const plan = buildToday({
+    problems,
+    ps,
+    ts,
+    config: scoringConfig,
+    today,
+    budget: Math.max(budget, 300),
+    events: data.events,
+  });
+  return { config, problems, data, practicePlan, ps, ts, candidates: plan.items };
+}
+
+function planEventFromItems(items, today) {
+  return {
+    type: 'plan',
+    id: eventId(),
+    ts: localIsoTimestamp(),
+    date: today,
+    items: items.map((item) => ({
+      problemId: item.p.id,
+      kind: item.kind || 'new',
+      reason: item.reason,
+    })),
+  };
+}
+
+function createState(dataDir, remoteAddress, today = localDate()) {
+  const config = readConfig(dataDir);
+  const problems = readJson(path.join(dataDir, 'problems.json'));
+  const data = readJson(path.join(dataDir, 'data.json'));
+  const practicePlan = readJson(path.join(dataDir, 'plan.json'));
+  const reportsFile = readJson(path.join(dataDir, 'reports.json'));
   if (!Array.isArray(problems)) {
     throw new Error('problems.json 必须是题目数组');
   }
   if (!data || !Array.isArray(data.events)) {
     throw new Error('data.json 必须包含 events 数组');
   }
-  const { ps, ts } = deriveState(data.events, problems, config);
+  const scoringConfig = { ...config, _activePlan: practicePlan };
+  const { ps, ts } = deriveState(data.events, problems, scoringConfig);
   const budget = getBudgetForDate(data.events, config, today);
-  const plan = buildToday({
+  const basePlan = buildToday({
     problems,
     ps,
     ts,
-    config,
+    config: scoringConfig,
     today,
     budget,
     events: data.events,
   });
+  const plan = applyPlanSnapshot(basePlan, data.events, problems, data.events, today);
   const stats = computeStats(data.events, problems, config, today);
+  const weekly = weeklyEligibility(data.events, today);
+  const activePhase = getActivePhase(practicePlan, today);
+  const ai = normalizeAiConfig(config.ai, process.env);
+  const recentReports = Array.isArray(reportsFile.reports)
+    ? reportsFile.reports.slice().sort((left, right) => String(right.createdAt).localeCompare(String(left.createdAt))).slice(0, 12)
+    : [];
   return {
     ok: true,
     config,
     today,
     budget,
     plan,
+    practicePlan,
+    activePhase,
+    dailySummaryAvailable: stats.totalAttempts > 0,
+    weeklyEligibility: weekly,
+    recentReports,
+    ai: {
+      configured: ai.configured,
+      baseUrl: ai.baseUrl,
+      model: ai.model,
+    },
     stats,
     recent: stats.recent,
     readOnly: !isLoopbackAddress(remoteAddress),
@@ -473,14 +732,237 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
       }
 
       if (request.method === 'GET' && pathname === '/api/export') {
-        const body = fs.readFileSync(path.join(resolvedDataDir, 'data.json'));
+        const result = writeExportBundle(rootDir, resolvedDataDir);
+        const body = Buffer.from(`${JSON.stringify(result.bundle, null, 2)}\n`, 'utf8');
         response.writeHead(200, {
           'Content-Type': 'application/json; charset=utf-8',
-          'Content-Disposition': 'attachment; filename="algo-coach-data.json"',
+          'Content-Disposition': `attachment; filename="${result.fileName}"`,
+          'X-Export-File': result.fileName,
           'Content-Length': body.length,
           'Cache-Control': 'no-store',
         });
         response.end(body);
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/profile') {
+        const body = await readBody(request);
+        const configPath = path.join(resolvedDataDir, 'config.json');
+        const current = readConfig(resolvedDataDir);
+        const profile = validateProfilePatch(current.profile, body.profile || body);
+        const next = { ...current, profile };
+        atomicWriteJson(configPath, next);
+        let practicePlan = readJson(path.join(resolvedDataDir, 'plan.json'));
+        if (profile.goalDate && body.generatePlan !== false) {
+          practicePlan = {
+            ...generatePlanSkeleton({
+              profile,
+              today: localDate(),
+              scopeTags: next.scopeTags,
+            }),
+            updatedAt: localIsoTimestamp(),
+          };
+          atomicWriteJson(path.join(resolvedDataDir, 'plan.json'), practicePlan);
+        }
+        sendJson(response, 200, {
+          ok: true,
+          profile,
+          practicePlan,
+          state: createState(resolvedDataDir, remoteAddress),
+        });
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/plan/generate') {
+        const config = readConfig(resolvedDataDir);
+        const practicePlan = {
+          ...generatePlanSkeleton({
+            profile: config.profile,
+            today: localDate(),
+            scopeTags: config.scopeTags,
+          }),
+          updatedAt: localIsoTimestamp(),
+        };
+        atomicWriteJson(path.join(resolvedDataDir, 'plan.json'), practicePlan);
+        sendJson(response, 200, {
+          ok: true,
+          practicePlan,
+          state: createState(resolvedDataDir, remoteAddress),
+        });
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/ai/report') {
+        const body = await readBody(request);
+        const type = body.type === 'weekly' ? 'weekly' : 'daily';
+        const today = body.date && isValidDate(body.date) ? body.date : localDate();
+        const config = readConfig(resolvedDataDir);
+        const data = readJson(path.join(resolvedDataDir, 'data.json'));
+        const problems = readJson(path.join(resolvedDataDir, 'problems.json'));
+        const practicePlan = readJson(path.join(resolvedDataDir, 'plan.json'));
+        const stats = computeStats(data.events, problems, config, today);
+        const weekly = weeklyEligibility(data.events, today);
+        if (type === 'weekly' && !weekly.eligible) {
+          throw new Error(`最近 7 天只有 ${weekly.activeDays} 个活跃日，至少需要 3 天`);
+        }
+        const periodStart = type === 'weekly' ? weekly.startDate : today;
+        const attempts = data.events.filter(
+          (event) =>
+            event.type === 'attempt' &&
+            event.date >= periodStart &&
+            event.date <= today,
+        );
+        if (!attempts.length) {
+          throw new Error('当前周期还没有做题记录，无法生成复盘');
+        }
+        const input = {
+          period: { start: periodStart, end: today, type },
+          profile: config.profile,
+          activePhase: getActivePhase(practicePlan, today),
+          stats: {
+            streak: stats.streak,
+            totalAttempts: stats.totalAttempts,
+            totalSolved: stats.totalSolved,
+            totalMinutes: stats.totalMinutes,
+            weekSolved: stats.weekSolved,
+            tagStats: stats.tagStats,
+          },
+          attempts,
+          dailyPlan: createState(resolvedDataDir, remoteAddress, today).plan.items.map(
+            (item) => ({ problemId: item.p.id, title: item.p.title, reason: item.reason }),
+          ),
+        };
+        const content = await requestStructuredReport({
+          config: config.ai,
+          type,
+          input,
+        });
+        const aiConfig = normalizeAiConfig(config.ai, process.env);
+        const report = {
+          id: `report_${type}_${backupTimestamp()}_${crypto.randomBytes(2).toString('hex')}`,
+          type,
+          periodStart,
+          periodEnd: today,
+          createdAt: localIsoTimestamp(),
+          model: aiConfig.model,
+          inputHash: hashString(JSON.stringify(input)),
+          content,
+        };
+        appendReport(resolvedDataDir, report);
+        sendJson(response, 200, {
+          ok: true,
+          report,
+          state: createState(resolvedDataDir, remoteAddress),
+        });
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/ai/select') {
+        const body = await readBody(request);
+        const today = body.date && isValidDate(body.date) ? body.date : localDate();
+        const pool = buildCandidatePool(resolvedDataDir, today);
+        if (!pool.candidates.length) {
+          throw new Error('当前没有可供 AI 选择的候选题');
+        }
+        const selections = await requestAiSelection({
+          config: pool.config.ai,
+          profile: pool.config.profile,
+          today,
+          candidates: pool.candidates.map((item) => ({
+            id: item.p.id,
+            title: item.p.title,
+            platform: item.p.platform,
+            difficulty: item.p.difficulty,
+            tags: item.p.tags,
+            reason: item.reason,
+          })),
+        });
+        if (!selections.length) {
+          throw new Error('AI 没有返回候选池中的有效题目');
+        }
+        sendJson(response, 200, {
+          ok: true,
+          selections: selections.map((selection) => {
+            const candidate = pool.candidates.find(
+              (item) => item.p.id === selection.problemId,
+            );
+            return {
+              ...selection,
+              problem: candidate.p,
+              estMinutes: candidate.estMinutes,
+              sourceReason: candidate.reason,
+            };
+          }),
+        });
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/plan/apply') {
+        const body = await readBody(request);
+        const today = body.date && isValidDate(body.date) ? body.date : localDate();
+        const pool = buildCandidatePool(resolvedDataDir, today);
+        const selections = validateAiSelection(
+          { selections: body.selections || [] },
+          pool.candidates.map((item) => item.p.id),
+        );
+        if (!selections.length) {
+          throw new Error('没有可应用的 AI 选题');
+        }
+        const items = selections.map((selection) => {
+          const candidate = pool.candidates.find(
+            (item) => item.p.id === selection.problemId,
+          );
+          return {
+            ...candidate,
+            kind: 'ai',
+            reason: selection.reason,
+          };
+        });
+        const event = planEventFromItems(items, today);
+        appendEvent(resolvedDataDir, event);
+        sendJson(response, 200, {
+          ok: true,
+          event,
+          state: createState(resolvedDataDir, remoteAddress, today),
+        });
+        return;
+      }
+
+      if (request.method === 'POST' && pathname === '/api/problems/import') {
+        const body = await readBody(request);
+        const problems = readJson(path.join(resolvedDataDir, 'problems.json'));
+        const result = importProblems(body.text, problems, body.format || 'auto');
+        if (body.confirm === false) {
+          sendJson(response, 200, { ok: true, preview: true, ...result });
+          return;
+        }
+        if (!result.added.length) {
+          throw new Error(result.errors[0] || '没有可导入的新题目');
+        }
+        if (body.enrichAi) {
+          const config = readConfig(resolvedDataDir);
+          const metadata = await requestProblemMetadata({
+            config: config.ai,
+            problems: result.added,
+            scopeTags: config.scopeTags,
+          });
+          const metadataMap = new Map(metadata.map((item) => [item.id, item]));
+          result.added = result.added.map((item) => ({
+            ...item,
+            ...(metadataMap.get(item.id) || {}),
+            id: item.id,
+          }));
+        }
+        atomicWriteJson(
+          path.join(resolvedDataDir, 'problems.json'),
+          [...problems, ...result.added],
+        );
+        sendJson(response, 200, {
+          ok: true,
+          ...result,
+          total: problems.length + result.added.length,
+          state: createState(resolvedDataDir, remoteAddress),
+        });
         return;
       }
 
@@ -505,7 +987,8 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
         if (!Number.isFinite(minutes) || minutes < 1 || minutes > 1440) {
           throw new Error('用时必须是 1 到 1440 分钟的整数');
         }
-        const date = body.date || localDate();
+        const completed = normalizeCompletedAt(body.completedAt);
+        const date = body.completedAt ? completed.date : body.date || localDate();
         if (!isValidDate(date)) {
           throw new Error('记录日期无效');
         }
@@ -519,7 +1002,7 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
         const event = {
           type: 'attempt',
           id: eventId(now),
-          ts: localIsoTimestamp(now),
+          ts: body.completedAt ? completed.ts : localIsoTimestamp(now),
           date,
           problemId: String(body.problemId).slice(0, 120),
           result: body.result,
@@ -576,19 +1059,43 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
         if (!problems.some((problem) => problem.id === body.problemId)) {
           throw new Error('只能换掉题库中的题目');
         }
+        const currentState = createState(resolvedDataDir, remoteAddress, date);
+        const currentItems = currentState.plan.items;
+        const targetIndex = currentItems.findIndex(
+          (item) => item.p.id === body.problemId,
+        );
+        if (targetIndex < 0) {
+          throw new Error('这道题已经不在今天的计划中');
+        }
+        const pool = buildCandidatePool(resolvedDataDir, date);
+        const currentIds = new Set(currentItems.map((item) => item.p.id));
+        const replacement = pool.candidates.find(
+          (candidate) => !currentIds.has(candidate.p.id),
+        );
+        if (!replacement) {
+          throw new Error('暂无可替换的备选题');
+        }
         const now = new Date();
-        const event = {
+        const swapEvent = {
           type: 'swap',
           id: eventId(now),
           ts: localIsoTimestamp(now),
           date,
           problemId: String(body.problemId).slice(0, 120),
         };
-        appendEvent(resolvedDataDir, event);
+        const nextItems = currentItems.slice();
+        nextItems[targetIndex] = {
+          ...replacement,
+          kind: 'swap_fill',
+          reason: `换题补入：${replacement.reason}`,
+        };
+        const planEvent = planEventFromItems(nextItems, date);
+        appendEvents(resolvedDataDir, [swapEvent, planEvent]);
         sendJson(response, 200, {
           ok: true,
-          event,
-          state: createState(resolvedDataDir, remoteAddress),
+          event: swapEvent,
+          replacement: replacement.p,
+          state: createState(resolvedDataDir, remoteAddress, date),
         });
         return;
       }
@@ -596,7 +1103,7 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
       if (request.method === 'POST' && pathname === '/api/config') {
         const body = await readBody(request);
         const configPath = path.join(resolvedDataDir, 'config.json');
-        const current = readJson(configPath);
+        const current = readConfig(resolvedDataDir);
         const next = validateConfigPatch(current, body);
         atomicWriteJson(configPath, next);
         sendJson(response, 200, {
@@ -625,7 +1132,10 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
         error.message.includes('只能') ||
         error.message.includes('不支持') ||
         error.message.includes('需要') ||
-        error.message.includes('过大');
+        error.message.includes('过大') ||
+        error.message.includes('有效') ||
+        error.message.includes('尚未配置') ||
+        error.message.includes('AI 返回');
       sendError(response, knownError ? 400 : 500, error.message || '服务器发生未知错误');
     }
   });
@@ -647,6 +1157,7 @@ function networkUrls(port = PORT) {
 function startServer() {
   const dataDir = path.join(__dirname, 'data');
   ensureDataFiles(dataDir);
+  fs.mkdirSync(path.join(__dirname, 'exports'), { recursive: true });
   backupFile(path.join(dataDir, 'data.json'), path.join(dataDir, 'backup'));
   const server = createAppServer({ rootDir: __dirname });
   server.listen(PORT, HOST, () => {
@@ -665,10 +1176,14 @@ if (require.main === module) {
 
 module.exports = {
   BUILTIN_PROBLEMS,
+  DEFAULT_PLAN,
+  DEFAULT_REPORTS,
   DEFAULT_CONFIG,
   appendEvent,
+  appendEvents,
   atomicWriteJson,
   backupFile,
+  buildCandidatePool,
   createAppServer,
   createState,
   ensureDataFiles,
@@ -677,5 +1192,7 @@ module.exports = {
   localIsoTimestamp,
   networkUrls,
   readJson,
+  readConfig,
   startServer,
+  writeExportBundle,
 };

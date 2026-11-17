@@ -5,46 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
     <title>算法学习教练</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f9dff'/%3E%3Cpath d='M18 42 28 24l8 12 10-17' fill='none' stroke='%23071a33' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d69b5b'/%3E%3Cpath d='M18 42 28 24l8 12 10-17' fill='none' stroke='%23251b12' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <div class="page-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">本地优先学习系统</p>
+          <p class="eyebrow">LOCAL ALGORITHM STUDIO</p>
           <h1>算法学习教练</h1>
         </div>
-        <button class="button button-quiet" id="export-button" type="button">导出数据</button>
+        <button class="button button-quiet" id="export-button" type="button">导出完整数据</button>
       </header>
 
       <div class="readonly-banner" id="readonly-banner" hidden>
-        当前设备为只读模式。请在电脑本机打开页面后记录、换题或修改预算。
+        当前设备为只读模式。请在电脑本机打开页面后记录、调整计划或生成 AI 复盘。
       </div>
 
       <nav class="tabs" aria-label="页面切换">
         <button class="tab is-active" data-tab="today" type="button">今天</button>
+        <button class="tab" data-tab="plan" type="button">计划</button>
+        <button class="tab" data-tab="review" type="button">复盘</button>
         <button class="tab" data-tab="progress" type="button">进度</button>
       </nav>
 
       <main>
-        <section id="today-panel" class="panel" aria-labelledby="today-heading">
-          <div class="day-summary">
-            <div>
-              <p class="eyebrow" id="today-heading">今日计划</p>
-              <h2 id="today-date">今天</h2>
+        <section id="today-panel" class="panel">
+          <article class="welcome-hero">
+            <img
+              class="hero-art"
+              src="/assets/warm-ai-hero.png"
+              alt=""
+              onerror="this.hidden=true"
+            >
+            <div class="hero-copy">
+              <p class="eyebrow" id="today-date">今天</p>
+              <h2>把今天练扎实，<br>比多刷十道更重要。</h2>
+              <p id="phase-label">先确定目标，再开始今天的练习。</p>
+              <div class="hero-meta">
+                <button class="budget-pill" id="budget-button" type="button">
+                  <span id="budget-text">预算 90 分钟</span>
+                  <span>·</span>
+                  <span id="used-text">已用 0</span>
+                </button>
+                <span class="streak" id="streak-text">连续 0 天</span>
+              </div>
             </div>
-            <button class="budget-pill" id="budget-button" type="button">
-              <span id="budget-text">预算 90 分钟</span>
-              <span class="budget-divider">·</span>
-              <span id="used-text">已用 0</span>
-            </button>
-            <div class="streak" id="streak-text">🔥 连续 0 天</div>
-          </div>
+          </article>
 
           <div class="section-heading">
             <div>
-              <p class="eyebrow">按分钟安排</p>
+              <p class="eyebrow">DAILY SESSION</p>
               <h3>今天该做的题</h3>
             </div>
             <span class="plan-total" id="plan-total"></span>
@@ -55,99 +66,218 @@
 
           <div class="today-actions">
             <button class="button button-secondary" id="custom-button" type="button">
-              我自己加一道
+              临时加一道
+            </button>
+            <button class="button button-ai" id="ai-select-button" type="button">
+              让 AI 按目标重排
             </button>
           </div>
         </section>
 
-        <section id="progress-panel" class="panel" aria-labelledby="progress-heading" hidden>
+        <section id="plan-panel" class="panel" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TARGET PROFILE</p>
+              <h2>先告诉我你要去哪里</h2>
+            </div>
+          </div>
+
+          <form class="surface profile-form" id="profile-form">
+            <div class="form-grid">
+              <label class="field">
+                <span>竞赛 / 学习目标</span>
+                <input name="competition" type="text" placeholder="例如：蓝桥杯">
+              </label>
+              <label class="field">
+                <span>组别 / 赛道</span>
+                <input name="group" type="text" placeholder="例如：大学 B 组">
+              </label>
+              <label class="field">
+                <span>编程语言</span>
+                <input name="language" type="text" placeholder="例如：C++">
+              </label>
+              <label class="field">
+                <span>目标日期</span>
+                <input name="goalDate" type="date">
+              </label>
+              <label class="field">
+                <span>每周可用分钟</span>
+                <input name="weeklyMinutes" type="number" min="60" max="10080" step="30">
+              </label>
+              <label class="field">
+                <span>当前水平</span>
+                <input name="currentLevel" type="text" placeholder="例如：普及组基础，图论偏弱">
+              </label>
+            </div>
+            <label class="field">
+              <span>偏好平台（用逗号分隔）</span>
+              <input name="preferredPlatforms" type="text" placeholder="洛谷, Codeforces">
+            </label>
+            <label class="field">
+              <span>重点标签（用逗号分隔）</span>
+              <input name="focusTags" type="text" placeholder="动态规划, 图论, 二分">
+            </label>
+            <label class="field">
+              <span>补充说明</span>
+              <textarea name="notes" rows="3" placeholder="你的弱项、时间限制或特别目标"></textarea>
+            </label>
+            <div class="inline-actions">
+              <button class="button button-primary" type="submit">保存画像并生成规划书</button>
+              <span class="muted">修改画像后可以随时重新生成。</span>
+            </div>
+          </form>
+
+          <section class="surface plan-book">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">PRACTICE BLUEPRINT</p>
+                <h3>当前练习规划书</h3>
+              </div>
+              <button class="button button-quiet" id="regenerate-plan-button" type="button">
+                重新生成
+              </button>
+            </div>
+            <div id="plan-book-content"></div>
+          </section>
+
+          <section class="surface">
+            <details>
+              <summary>AI 与数据设置</summary>
+              <div class="settings-body">
+                <div class="ai-status" id="ai-status"></div>
+                <div class="form-grid">
+                  <label class="field">
+                    <span>AI Base URL</span>
+                    <input id="ai-base-url" type="url">
+                  </label>
+                  <label class="field">
+                    <span>模型</span>
+                    <input id="ai-model" type="text">
+                  </label>
+                </div>
+                <p class="helper-text">
+                  密钥只从本机环境变量 `DEEPSEEK_API_KEY` 或 `OPENAI_API_KEY` 读取，不会写入文件。
+                </p>
+                <button class="button button-secondary" id="save-ai-settings-button" type="button">
+                  保存 AI 设置
+                </button>
+
+                <hr>
+                <h4>导入题库</h4>
+                <p class="helper-text">
+                  支持 JSON / CSV。只保存平台链接、标题、难度、用时和标签，不抓取题面。
+                </p>
+                <label class="field">
+                  <span>粘贴题目数据或选择文件</span>
+                  <textarea id="import-text" rows="7" placeholder="支持 JSON 数组或带表头的 CSV"></textarea>
+                </label>
+                <input id="import-file" type="file" accept=".json,.csv,text/csv,application/json">
+                <label class="choice-grid compact-choice">
+                  <span><input id="import-enrich-ai" type="checkbox"> 确认导入时用 AI 补全难度、用时和标签</span>
+                </label>
+                <div class="inline-actions">
+                  <button class="button button-secondary" id="preview-import-button" type="button">
+                    校验并预览
+                  </button>
+                  <button class="button button-primary" id="confirm-import-button" type="button" disabled>
+                    确认导入
+                  </button>
+                </div>
+                <div id="import-result" class="inline-result"></div>
+              </div>
+            </details>
+          </section>
+        </section>
+
+        <section id="review-panel" class="panel" hidden>
+          <article class="review-hero surface">
+            <img
+              class="companion-avatar"
+              src="/assets/warm-ai-avatar.png"
+              alt="AI 学习助手头像"
+              onerror="this.hidden=true"
+            >
+            <div>
+              <p class="eyebrow">AI REVIEW DESK</p>
+              <h2>用数据说真话</h2>
+              <p id="review-intro">日报聚焦今天，周报审视最近七天。生成前不会发送任何数据。</p>
+            </div>
+          </article>
+          <div class="review-actions">
+            <button class="button button-ai" id="daily-report-button" type="button">
+              生成今日简报
+            </button>
+            <button class="button button-secondary" id="weekly-report-button" type="button">
+              生成近 7 天周报
+            </button>
+          </div>
+          <p class="helper-text" id="weekly-eligibility"></p>
+          <div class="report-list" id="report-list"></div>
+        </section>
+
+        <section id="progress-panel" class="panel" hidden>
           <div class="section-heading section-heading-spaced">
             <div>
-              <p class="eyebrow">学习轨迹</p>
-              <h2 id="progress-heading">你的进度</h2>
+              <p class="eyebrow">LEARNING TRAIL</p>
+              <h2>你的进度</h2>
             </div>
           </div>
 
           <div class="stat-grid">
-            <article class="stat-card">
-              <span>累计题数</span>
-              <strong id="stat-attempts">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>累计分钟</span>
-              <strong id="stat-minutes">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>连续天数</span>
-              <strong id="stat-streak">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>本周完成</span>
-              <strong id="stat-week">0</strong>
-            </article>
+            <article class="stat-card"><span>累计题数</span><strong id="stat-attempts">0</strong></article>
+            <article class="stat-card"><span>累计分钟</span><strong id="stat-minutes">0</strong></article>
+            <article class="stat-card"><span>连续天数</span><strong id="stat-streak">0</strong></article>
+            <article class="stat-card"><span>本周完成</span><strong id="stat-week">0</strong></article>
           </div>
 
-          <section class="content-section" aria-labelledby="heatmap-heading">
+          <section class="content-section">
             <div class="section-heading compact">
-              <h3 id="heatmap-heading">最近 12 周</h3>
+              <h3>最近 12 周</h3>
               <div class="heat-legend" aria-hidden="true">
                 <span>少</span>
-                <i class="heat-cell level-0"></i>
-                <i class="heat-cell level-1"></i>
-                <i class="heat-cell level-2"></i>
-                <i class="heat-cell level-3"></i>
-                <i class="heat-cell level-4"></i>
-                <span>多</span>
+                <i class="heat-cell level-0"></i><i class="heat-cell level-1"></i>
+                <i class="heat-cell level-2"></i><i class="heat-cell level-3"></i>
+                <i class="heat-cell level-4"></i><span>多</span>
               </div>
             </div>
-            <div class="heatmap-grid" id="heatmap-grid" aria-label="最近 12 周刷题热力图"></div>
+            <div class="heatmap-grid" id="heatmap-grid"></div>
           </section>
 
-          <section class="content-section" aria-labelledby="tags-heading">
-            <div class="section-heading compact">
-              <h3 id="tags-heading">知识点状态</h3>
-            </div>
+          <section class="content-section">
+            <div class="section-heading compact"><h3>知识点状态</h3></div>
             <div class="table-wrap">
               <table>
                 <thead>
-                  <tr>
-                    <th>标签</th>
-                    <th>次数</th>
-                    <th>通过率</th>
-                    <th>最近练习</th>
-                    <th>水平</th>
-                  </tr>
+                  <tr><th>标签</th><th>次数</th><th>通过率</th><th>最近练习</th><th>水平</th></tr>
                 </thead>
                 <tbody id="tag-table-body"></tbody>
               </table>
             </div>
           </section>
 
-          <section class="content-section" aria-labelledby="recent-heading">
+          <section class="content-section">
             <div class="section-heading compact">
-              <h3 id="recent-heading">最近记录</h3>
-              <span class="muted">点击记录展开手写总结</span>
+              <h3>最近记录</h3>
+              <span class="muted">点击展开手写总结</span>
             </div>
             <div class="recent-list" id="recent-list"></div>
           </section>
         </section>
       </main>
 
-      <footer>
-        数据只保存在本机 <code>data/data.json</code>
-      </footer>
+      <footer>数据只保存在本机 · 密钥不会写入任何数据文件</footer>
     </div>
 
     <dialog class="modal" id="record-dialog">
       <form id="record-form">
         <div class="modal-header">
-          <div>
-            <p class="eyebrow">完成记录</p>
-            <h2 id="record-title">记录这道题</h2>
-          </div>
+          <div><p class="eyebrow">完成记录</p><h2 id="record-title">记录这道题</h2></div>
           <button class="icon-button" type="button" data-close-dialog="record-dialog" aria-label="关闭">×</button>
         </div>
-
+        <label class="field">
+          <span>完成日期与时间</span>
+          <input id="record-completed-at" name="completedAt" type="datetime-local" required>
+        </label>
         <fieldset>
           <legend>结果（必选）</legend>
           <div class="choice-grid">
@@ -157,7 +287,6 @@
             <label><input type="radio" name="result" value="failed"> 没做出来</label>
           </div>
         </fieldset>
-
         <fieldset>
           <legend>卡在哪（可选，多选）</legend>
           <div class="choice-grid">
@@ -167,7 +296,6 @@
             <label><input type="checkbox" name="stuckAt" value="edge"> 边界</label>
           </div>
         </fieldset>
-
         <fieldset>
           <legend>主观难度（可选）</legend>
           <div class="choice-grid">
@@ -176,23 +304,14 @@
             <label><input type="radio" name="perceived" value="harder"> 比预期难</label>
           </div>
         </fieldset>
-
         <label class="field">
           <span>用时（分钟）</span>
           <input id="record-minutes" name="minutes" type="number" min="1" max="1440" required>
         </label>
-
         <label class="field">
           <span>手写总结（必填）</span>
-          <textarea
-            id="record-note"
-            name="note"
-            rows="7"
-            required
-            placeholder="写下你的思路、卡点、边界和下次要注意的地方……"
-          ></textarea>
+          <textarea id="record-note" name="note" rows="7" required placeholder="写下你的思路、卡点、边界和下次要注意的地方……"></textarea>
         </label>
-
         <div class="modal-actions">
           <button class="button button-quiet" type="button" data-close-dialog="record-dialog">取消</button>
           <button class="button button-primary" id="save-record-button" type="submit">保存记录</button>
@@ -203,16 +322,10 @@
     <dialog class="modal modal-small" id="budget-dialog">
       <form id="budget-form">
         <div class="modal-header">
-          <div>
-            <p class="eyebrow">今日时间</p>
-            <h2>调整预算</h2>
-          </div>
+          <div><p class="eyebrow">今日时间</p><h2>调整预算</h2></div>
           <button class="icon-button" type="button" data-close-dialog="budget-dialog" aria-label="关闭">×</button>
         </div>
-        <label class="field">
-          <span>今天有多少分钟？</span>
-          <input id="budget-minutes" name="minutes" type="number" min="0" max="1440" required>
-        </label>
+        <label class="field"><span>今天有多少分钟？</span><input id="budget-minutes" name="minutes" type="number" min="0" max="1440" required></label>
         <div class="modal-actions">
           <button class="button button-quiet" type="button" data-close-dialog="budget-dialog">取消</button>
           <button class="button button-primary" type="submit">更新计划</button>
@@ -223,30 +336,33 @@
     <dialog class="modal modal-small" id="custom-dialog">
       <form id="custom-form">
         <div class="modal-header">
-          <div>
-            <p class="eyebrow">临时加题</p>
-            <h2>我自己加一道</h2>
-          </div>
+          <div><p class="eyebrow">临时加题</p><h2>我自己加一道</h2></div>
           <button class="icon-button" type="button" data-close-dialog="custom-dialog" aria-label="关闭">×</button>
         </div>
-        <label class="field">
-          <span>题目标题</span>
-          <input id="custom-title" name="title" type="text" maxlength="120" required>
-        </label>
-        <label class="field">
-          <span>题目链接</span>
-          <input id="custom-url" name="url" type="url" placeholder="https://" required>
-        </label>
-        <label class="field">
-          <span>预计用时（分钟）</span>
-          <input id="custom-minutes" name="minutes" type="number" min="1" max="1440" value="40" required>
-        </label>
-        <p class="helper-text">临时题只在本次页面中保留，不会写入题库，也不会参与后续复习。</p>
+        <label class="field"><span>题目标题</span><input id="custom-title" name="title" type="text" maxlength="120" required></label>
+        <label class="field"><span>题目链接</span><input id="custom-url" name="url" type="url" placeholder="https://" required></label>
+        <label class="field"><span>预计用时（分钟）</span><input id="custom-minutes" name="minutes" type="number" min="1" max="1440" value="40" required></label>
+        <p class="helper-text">临时题只在本次页面保留，不写入题库，也不进入自动复习。</p>
         <div class="modal-actions">
           <button class="button button-quiet" type="button" data-close-dialog="custom-dialog">取消</button>
           <button class="button button-primary" type="submit">加入今天</button>
         </div>
       </form>
+    </dialog>
+
+    <dialog class="modal" id="ai-selection-dialog">
+      <div class="modal-body">
+        <div class="modal-header">
+          <div><p class="eyebrow">AI SELECTION</p><h2>AI 建议题单</h2></div>
+          <button class="icon-button" type="button" data-close-dialog="ai-selection-dialog" aria-label="关闭">×</button>
+        </div>
+        <p class="helper-text">AI 只能从规则候选池中选择。确认后才会替换今天计划。</p>
+        <div id="ai-selection-list" class="selection-list"></div>
+        <div class="modal-actions">
+          <button class="button button-quiet" type="button" data-close-dialog="ai-selection-dialog">取消</button>
+          <button class="button button-ai" id="apply-ai-selection-button" type="button">确认应用题单</button>
+        </div>
+      </div>
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>

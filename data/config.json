@@ -13,6 +13,7 @@
   ],
   "tagColdDays": 14,
   "recentDays": 7,
+  "theme": "warm",
   "scopeTags": [
     "数组",
     "哈希表",
@@ -40,5 +41,20 @@
     "fresh": 0.25,
     "level": 0.2,
     "prereq": 0.15
+  },
+  "profile": {
+    "competition": "",
+    "group": "",
+    "language": "C++",
+    "goalDate": "",
+    "weeklyMinutes": 300,
+    "preferredPlatforms": ["洛谷", "Codeforces"],
+    "focusTags": [],
+    "currentLevel": "",
+    "notes": ""
+  },
+  "ai": {
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash"
   }
 }
