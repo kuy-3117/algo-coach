@@ -1,0 +1,272 @@
+[
+  {
+    "id": "cf-4A",
+    "title": "Watermelon",
+    "url": "https://codeforces.com/problemset/problem/4/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数论", "位运算"]
+  },
+  {
+    "id": "cf-158A",
+    "title": "Next Round",
+    "url": "https://codeforces.com/problemset/problem/158/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数组", "排序"]
+  },
+  {
+    "id": "cf-71A",
+    "title": "Way Too Long Words",
+    "url": "https://codeforces.com/problemset/problem/71/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["字符串"]
+  },
+  {
+    "id": "cf-231A",
+    "title": "Team",
+    "url": "https://codeforces.com/problemset/problem/231/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数组", "贪心"]
+  },
+  {
+    "id": "cf-1A",
+    "title": "Theatre Square",
+    "url": "https://codeforces.com/problemset/problem/1/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数论"]
+  },
+  {
+    "id": "cf-50A",
+    "title": "Domino piling",
+    "url": "https://codeforces.com/problemset/problem/50/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数论", "贪心"]
+  },
+  {
+    "id": "cf-282A",
+    "title": "Bit++",
+    "url": "https://codeforces.com/problemset/problem/282/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["字符串", "位运算"]
+  },
+  {
+    "id": "cf-263A",
+    "title": "Beautiful Matrix",
+    "url": "https://codeforces.com/problemset/problem/263/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["数组"]
+  },
+  {
+    "id": "cf-112A",
+    "title": "Petya and Strings",
+    "url": "https://codeforces.com/problemset/problem/112/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["字符串", "排序"]
+  },
+  {
+    "id": "cf-339A",
+    "title": "Helpful Maths",
+    "url": "https://codeforces.com/problemset/problem/339/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 20,
+    "tags": ["字符串", "排序"]
+  },
+  {
+    "id": "cf-236A",
+    "title": "Boy or Girl",
+    "url": "https://codeforces.com/problemset/problem/236/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 30,
+    "tags": ["哈希表", "字符串"]
+  },
+  {
+    "id": "cf-318A",
+    "title": "Even Odds",
+    "url": "https://codeforces.com/problemset/problem/318/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 30,
+    "tags": ["数论"]
+  },
+  {
+    "id": "cf-469A",
+    "title": "I Wanna Be the Guy",
+    "url": "https://codeforces.com/problemset/problem/469/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 30,
+    "tags": ["哈希表", "数组"]
+  },
+  {
+    "id": "cf-489B",
+    "title": "BerSU Ball",
+    "url": "https://codeforces.com/problemset/problem/489/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 40,
+    "tags": ["双指针", "排序", "贪心"]
+  },
+  {
+    "id": "cf-474B",
+    "title": "Worms",
+    "url": "https://codeforces.com/problemset/problem/474/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 40,
+    "tags": ["二分", "前缀和"]
+  },
+  {
+    "id": "cf-706B",
+    "title": "Interesting drink",
+    "url": "https://codeforces.com/problemset/problem/706/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 40,
+    "tags": ["二分", "排序"]
+  },
+  {
+    "id": "cf-580A",
+    "title": "Kefa and First Steps",
+    "url": "https://codeforces.com/problemset/problem/580/A",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 60,
+    "tags": ["数组", "动态规划"]
+  },
+  {
+    "id": "cf-455A",
+    "title": "Boredom",
+    "url": "https://codeforces.com/problemset/problem/455/A",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": ["动态规划", "数组"]
+  },
+  {
+    "id": "cf-230B",
+    "title": "T-primes",
+    "url": "https://codeforces.com/problemset/problem/230/B",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": ["数论", "二分"]
+  },
+  {
+    "id": "cf-813C",
+    "title": "The Tag Game",
+    "url": "https://codeforces.com/problemset/problem/813/C",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 90,
+    "tags": ["二叉树", "图论"]
+  },
+  {
+    "id": "luogu-P1048",
+    "title": "采药",
+    "url": "https://www.luogu.com.cn/problem/P1048",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 40,
+    "tags": ["动态规划"]
+  },
+  {
+    "id": "luogu-P2249",
+    "title": "查找",
+    "url": "https://www.luogu.com.cn/problem/P2249",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 35,
+    "tags": ["二分", "数组"]
+  },
+  {
+    "id": "luogu-P1739",
+    "title": "表达式括号匹配",
+    "url": "https://www.luogu.com.cn/problem/P1739",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 30,
+    "tags": ["栈", "字符串"]
+  },
+  {
+    "id": "luogu-P1305",
+    "title": "新二叉树",
+    "url": "https://www.luogu.com.cn/problem/P1305",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 40,
+    "tags": ["二叉树"]
+  },
+  {
+    "id": "luogu-P1216",
+    "title": "数字三角形 Number Triangles",
+    "url": "https://www.luogu.com.cn/problem/P1216",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 50,
+    "tags": ["动态规划", "数组"]
+  },
+  {
+    "id": "luogu-P1605",
+    "title": "迷宫",
+    "url": "https://www.luogu.com.cn/problem/P1605",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 60,
+    "tags": ["回溯", "图论"]
+  },
+  {
+    "id": "luogu-P3378",
+    "title": "【模板】堆",
+    "url": "https://www.luogu.com.cn/problem/P3378",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": ["堆"]
+  },
+  {
+    "id": "luogu-P3367",
+    "title": "【模板】并查集",
+    "url": "https://www.luogu.com.cn/problem/P3367",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": ["并查集", "图论"]
+  },
+  {
+    "id": "luogu-P4779",
+    "title": "【模板】单源最短路径（标准版）",
+    "url": "https://www.luogu.com.cn/problem/P4779",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 90,
+    "tags": ["图论", "堆"]
+  },
+  {
+    "id": "luogu-P1886",
+    "title": "滑动窗口 /【模板】单调队列",
+    "url": "https://www.luogu.com.cn/problem/P1886",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 80,
+    "tags": ["滑动窗口", "队列"]
+  }
+]
