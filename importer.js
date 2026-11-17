@@ -95,6 +95,16 @@ function normalizeProblem(problem, index) {
     difficulty,
     estMinutes,
     tags: normalizeTags(problem.tags || problem['标签']),
+    ...(Array.isArray(problem.competitions)
+      ? {
+          competitions: problem.competitions
+            .filter((item) => typeof item === 'string')
+            .slice(0, 10),
+        }
+      : {}),
+    ...(problem.cspRole
+      ? { cspRole: String(problem.cspRole).slice(0, 80) }
+      : {}),
   };
 }
 

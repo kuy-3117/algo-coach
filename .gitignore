@@ -3,6 +3,7 @@ node_modules/
 *.log
 data/backup/*.json
 data/data.json
+data/config.json
 data/plan.json
 data/reports.json
 exports/*.json

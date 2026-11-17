@@ -6,7 +6,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数论", "位运算"]
+    "tags": [
+      "数论",
+      "位运算"
+    ]
   },
   {
     "id": "cf-158A",
@@ -15,7 +18,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数组", "排序"]
+    "tags": [
+      "数组",
+      "排序"
+    ]
   },
   {
     "id": "cf-71A",
@@ -24,7 +30,9 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["字符串"]
+    "tags": [
+      "字符串"
+    ]
   },
   {
     "id": "cf-231A",
@@ -33,7 +41,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数组", "贪心"]
+    "tags": [
+      "数组",
+      "贪心"
+    ]
   },
   {
     "id": "cf-1A",
@@ -42,7 +53,9 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数论"]
+    "tags": [
+      "数论"
+    ]
   },
   {
     "id": "cf-50A",
@@ -51,7 +64,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数论", "贪心"]
+    "tags": [
+      "数论",
+      "贪心"
+    ]
   },
   {
     "id": "cf-282A",
@@ -60,7 +76,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["字符串", "位运算"]
+    "tags": [
+      "字符串",
+      "位运算"
+    ]
   },
   {
     "id": "cf-263A",
@@ -69,7 +88,9 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["数组"]
+    "tags": [
+      "数组"
+    ]
   },
   {
     "id": "cf-112A",
@@ -78,7 +99,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["字符串", "排序"]
+    "tags": [
+      "字符串",
+      "排序"
+    ]
   },
   {
     "id": "cf-339A",
@@ -87,7 +111,10 @@
     "platform": "Codeforces",
     "difficulty": 1,
     "estMinutes": 20,
-    "tags": ["字符串", "排序"]
+    "tags": [
+      "字符串",
+      "排序"
+    ]
   },
   {
     "id": "cf-236A",
@@ -96,7 +123,10 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 30,
-    "tags": ["哈希表", "字符串"]
+    "tags": [
+      "哈希表",
+      "字符串"
+    ]
   },
   {
     "id": "cf-318A",
@@ -105,7 +135,9 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 30,
-    "tags": ["数论"]
+    "tags": [
+      "数论"
+    ]
   },
   {
     "id": "cf-469A",
@@ -114,7 +146,10 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 30,
-    "tags": ["哈希表", "数组"]
+    "tags": [
+      "哈希表",
+      "数组"
+    ]
   },
   {
     "id": "cf-489B",
@@ -123,7 +158,11 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 40,
-    "tags": ["双指针", "排序", "贪心"]
+    "tags": [
+      "双指针",
+      "排序",
+      "贪心"
+    ]
   },
   {
     "id": "cf-474B",
@@ -132,7 +171,10 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 40,
-    "tags": ["二分", "前缀和"]
+    "tags": [
+      "二分",
+      "前缀和"
+    ]
   },
   {
     "id": "cf-706B",
@@ -141,7 +183,10 @@
     "platform": "Codeforces",
     "difficulty": 2,
     "estMinutes": 40,
-    "tags": ["二分", "排序"]
+    "tags": [
+      "二分",
+      "排序"
+    ]
   },
   {
     "id": "cf-580A",
@@ -150,7 +195,10 @@
     "platform": "Codeforces",
     "difficulty": 3,
     "estMinutes": 60,
-    "tags": ["数组", "动态规划"]
+    "tags": [
+      "数组",
+      "动态规划"
+    ]
   },
   {
     "id": "cf-455A",
@@ -159,7 +207,10 @@
     "platform": "Codeforces",
     "difficulty": 3,
     "estMinutes": 70,
-    "tags": ["动态规划", "数组"]
+    "tags": [
+      "动态规划",
+      "数组"
+    ]
   },
   {
     "id": "cf-230B",
@@ -168,7 +219,10 @@
     "platform": "Codeforces",
     "difficulty": 3,
     "estMinutes": 70,
-    "tags": ["数论", "二分"]
+    "tags": [
+      "数论",
+      "二分"
+    ]
   },
   {
     "id": "cf-813C",
@@ -177,7 +231,10 @@
     "platform": "Codeforces",
     "difficulty": 3,
     "estMinutes": 90,
-    "tags": ["二叉树", "图论"]
+    "tags": [
+      "二叉树",
+      "图论"
+    ]
   },
   {
     "id": "luogu-P1048",
@@ -186,7 +243,9 @@
     "platform": "洛谷",
     "difficulty": 2,
     "estMinutes": 40,
-    "tags": ["动态规划"]
+    "tags": [
+      "动态规划"
+    ]
   },
   {
     "id": "luogu-P2249",
@@ -195,7 +254,10 @@
     "platform": "洛谷",
     "difficulty": 2,
     "estMinutes": 35,
-    "tags": ["二分", "数组"]
+    "tags": [
+      "二分",
+      "数组"
+    ]
   },
   {
     "id": "luogu-P1739",
@@ -204,7 +266,10 @@
     "platform": "洛谷",
     "difficulty": 2,
     "estMinutes": 30,
-    "tags": ["栈", "字符串"]
+    "tags": [
+      "栈",
+      "字符串"
+    ]
   },
   {
     "id": "luogu-P1305",
@@ -213,7 +278,9 @@
     "platform": "洛谷",
     "difficulty": 2,
     "estMinutes": 40,
-    "tags": ["二叉树"]
+    "tags": [
+      "二叉树"
+    ]
   },
   {
     "id": "luogu-P1216",
@@ -222,7 +289,10 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 50,
-    "tags": ["动态规划", "数组"]
+    "tags": [
+      "动态规划",
+      "数组"
+    ]
   },
   {
     "id": "luogu-P1605",
@@ -231,7 +301,10 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 60,
-    "tags": ["回溯", "图论"]
+    "tags": [
+      "回溯",
+      "图论"
+    ]
   },
   {
     "id": "luogu-P3378",
@@ -240,7 +313,9 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 70,
-    "tags": ["堆"]
+    "tags": [
+      "堆"
+    ]
   },
   {
     "id": "luogu-P3367",
@@ -249,7 +324,10 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 70,
-    "tags": ["并查集", "图论"]
+    "tags": [
+      "并查集",
+      "图论"
+    ]
   },
   {
     "id": "luogu-P4779",
@@ -258,7 +336,10 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 90,
-    "tags": ["图论", "堆"]
+    "tags": [
+      "图论",
+      "堆"
+    ]
   },
   {
     "id": "luogu-P1886",
@@ -267,6 +348,5092 @@
     "platform": "洛谷",
     "difficulty": 3,
     "estMinutes": 80,
-    "tags": ["滑动窗口", "队列"]
+    "tags": [
+      "滑动窗口",
+      "队列"
+    ]
+  },
+  {
+    "id": "luogu-P1035",
+    "title": "[NOIP 2002 普及组] 级数求和",
+    "url": "https://www.luogu.com.cn/problem/P1035",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2260A",
+    "title": "Monocarp's Contest",
+    "url": "https://codeforces.com/problemset/problem/2260/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1047",
+    "title": "[NOIP 2005 普及组] 校门外的树",
+    "url": "https://www.luogu.com.cn/problem/P1047",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2232B",
+    "title": "Cake Leveling",
+    "url": "https://codeforces.com/problemset/problem/2232/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "二分",
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1085",
+    "title": "[NOIP 2004 普及组] 不高兴的津津",
+    "url": "https://www.luogu.com.cn/problem/P1085",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2199A",
+    "title": "Game",
+    "url": "https://codeforces.com/problemset/problem/2199/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1089",
+    "title": "[NOIP 2004 提高组] 津津的储蓄计划",
+    "url": "https://www.luogu.com.cn/problem/P1089",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2167B",
+    "title": "Your Name",
+    "url": "https://codeforces.com/problemset/problem/2167/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "排序",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1151",
+    "title": "子数整数",
+    "url": "https://www.luogu.com.cn/problem/P1151",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2137A",
+    "title": "Collatz Conjecture",
+    "url": "https://codeforces.com/problemset/problem/2137/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1152",
+    "title": "欢乐的跳",
+    "url": "https://www.luogu.com.cn/problem/P1152",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2109A",
+    "title": "It's Time To Duel",
+    "url": "https://codeforces.com/problemset/problem/2109/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1161",
+    "title": "开灯",
+    "url": "https://www.luogu.com.cn/problem/P1161",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2065C1",
+    "title": "Skibidus and Fanum Tax (easy version)",
+    "url": "https://codeforces.com/problemset/problem/2065/C1",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "二分",
+      "动态规划",
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1200",
+    "title": "[USACO1.1] 你的飞碟在这儿 Your Ride Is Here",
+    "url": "https://www.luogu.com.cn/problem/P1200",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2035B",
+    "title": "Everyone Loves Tres",
+    "url": "https://codeforces.com/problemset/problem/2035/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1304",
+    "title": "哥德巴赫猜想",
+    "url": "https://www.luogu.com.cn/problem/P1304",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "回溯",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2002A",
+    "title": "Distanced Coloring",
+    "url": "https://codeforces.com/problemset/problem/2002/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1307",
+    "title": "[NOIP 2011 普及组] 数字反转",
+    "url": "https://www.luogu.com.cn/problem/P1307",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1978A",
+    "title": "Alice and Books",
+    "url": "https://codeforces.com/problemset/problem/1978/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1319",
+    "title": "压缩技术",
+    "url": "https://www.luogu.com.cn/problem/P1319",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1935A",
+    "title": "Entertainment in MAC",
+    "url": "https://codeforces.com/problemset/problem/1935/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1320",
+    "title": "压缩技术（续集版）",
+    "url": "https://www.luogu.com.cn/problem/P1320",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1907A",
+    "title": "Rook",
+    "url": "https://codeforces.com/problemset/problem/1907/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1321",
+    "title": "单词覆盖还原",
+    "url": "https://www.luogu.com.cn/problem/P1321",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1872A",
+    "title": "Two Vessels",
+    "url": "https://codeforces.com/problemset/problem/1872/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "贪心",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1420",
+    "title": "最长连号",
+    "url": "https://www.luogu.com.cn/problem/P1420",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1842B",
+    "title": "Tenzing and Books",
+    "url": "https://codeforces.com/problemset/problem/1842/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "位运算",
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1421",
+    "title": "小玉买文具",
+    "url": "https://www.luogu.com.cn/problem/P1421",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1811C",
+    "title": "Restore the Array",
+    "url": "https://codeforces.com/problemset/problem/1811/C",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1422",
+    "title": "小玉家的电费",
+    "url": "https://www.luogu.com.cn/problem/P1422",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1787A",
+    "title": "Exponential Equation",
+    "url": "https://codeforces.com/problemset/problem/1787/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1424",
+    "title": "小鱼的航程（改进版）",
+    "url": "https://www.luogu.com.cn/problem/P1424",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1758A",
+    "title": "SSeeeeiinngg DDoouubbllee",
+    "url": "https://codeforces.com/problemset/problem/1758/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1425",
+    "title": "小鱼的游泳时间",
+    "url": "https://www.luogu.com.cn/problem/P1425",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1725B",
+    "title": "Basketball Together",
+    "url": "https://codeforces.com/problemset/problem/1725/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "二分",
+      "贪心",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1426",
+    "title": "小鱼会有危险吗",
+    "url": "https://www.luogu.com.cn/problem/P1426",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1698B",
+    "title": "Rising Sand",
+    "url": "https://codeforces.com/problemset/problem/1698/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1428",
+    "title": "小鱼比可爱",
+    "url": "https://www.luogu.com.cn/problem/P1428",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1672B",
+    "title": "I love AAAB",
+    "url": "https://codeforces.com/problemset/problem/1672/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1534",
+    "title": "不高兴的津津（升级版）",
+    "url": "https://www.luogu.com.cn/problem/P1534",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1632B",
+    "title": "Roof Construction",
+    "url": "https://codeforces.com/problemset/problem/1632/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "位运算",
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1548",
+    "title": "[NOIP 1997 普及组] 棋盘问题",
+    "url": "https://www.luogu.com.cn/problem/P1548",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1605A",
+    "title": "A.M. Deviation",
+    "url": "https://codeforces.com/problemset/problem/1605/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1567",
+    "title": "统计天数",
+    "url": "https://www.luogu.com.cn/problem/P1567",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1553A",
+    "title": "Digits Sum",
+    "url": "https://codeforces.com/problemset/problem/1553/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1597",
+    "title": "语句解析",
+    "url": "https://www.luogu.com.cn/problem/P1597",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1511C",
+    "title": "Yet Another Card Deck",
+    "url": "https://codeforces.com/problemset/problem/1511/C",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "模拟",
+      "二叉树"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1614",
+    "title": "爱与愁的心痛",
+    "url": "https://www.luogu.com.cn/problem/P1614",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "贪心",
+      "前缀和",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1468E",
+    "title": "Four Segments",
+    "url": "https://codeforces.com/problemset/problem/1468/E",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1634",
+    "title": "禽兽的传染病",
+    "url": "https://www.luogu.com.cn/problem/P1634",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数论",
+      "动态规划",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1419D1",
+    "title": "Sage's Birthday (easy version)",
+    "url": "https://codeforces.com/problemset/problem/1419/D1",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "二分",
+      "贪心",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1639",
+    "title": "[USACO18FEB] Teleportation B",
+    "url": "https://www.luogu.com.cn/problem/P1639",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1369A",
+    "title": "FashionabLee",
+    "url": "https://codeforces.com/problemset/problem/1369/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1697",
+    "title": "[USACO18JAN] Lifeguards B",
+    "url": "https://www.luogu.com.cn/problem/P1697",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1323A",
+    "title": "Even Subset Sum Problem",
+    "url": "https://codeforces.com/problemset/problem/1323/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "动态规划",
+      "贪心",
+      "模拟"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1749",
+    "title": "[入门赛 #19] 分饼干 II",
+    "url": "https://www.luogu.com.cn/problem/P1749",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1251A",
+    "title": "Broken Keyboard",
+    "url": "https://codeforces.com/problemset/problem/1251/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "字符串",
+      "双指针"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1765",
+    "title": "手机",
+    "url": "https://www.luogu.com.cn/problem/P1765",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1195A",
+    "title": "Drinks Choosing",
+    "url": "https://codeforces.com/problemset/problem/1195/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1830",
+    "title": "轰炸III",
+    "url": "https://www.luogu.com.cn/problem/P1830",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1136B",
+    "title": "Nastya Is Playing Computer Games",
+    "url": "https://codeforces.com/problemset/problem/1136/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1851",
+    "title": "好朋友",
+    "url": "https://www.luogu.com.cn/problem/P1851",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1073B",
+    "title": "Vasya and Books",
+    "url": "https://codeforces.com/problemset/problem/1073/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1867",
+    "title": "【Mc生存】经验值",
+    "url": "https://www.luogu.com.cn/problem/P1867",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1001A",
+    "title": "Generate plus state or minus state",
+    "url": "https://codeforces.com/problemset/problem/1001/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1876",
+    "title": "开灯",
+    "url": "https://www.luogu.com.cn/problem/P1876",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-935A",
+    "title": "Fafa and his Company",
+    "url": "https://codeforces.com/problemset/problem/935/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "模拟"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1888",
+    "title": "三角函数",
+    "url": "https://www.luogu.com.cn/problem/P1888",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-855A",
+    "title": "Tom Riddle's Diary",
+    "url": "https://codeforces.com/problemset/problem/855/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "模拟",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1002",
+    "title": "[NOIP 2002 普及组] 过河卒",
+    "url": "https://www.luogu.com.cn/problem/P1002",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-776A",
+    "title": "A Serial Killer",
+    "url": "https://codeforces.com/problemset/problem/776/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "模拟",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1003",
+    "title": "[NOIP 2011 提高组] 铺地毯",
+    "url": "https://www.luogu.com.cn/problem/P1003",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-712A",
+    "title": "Memory and Crow",
+    "url": "https://codeforces.com/problemset/problem/712/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1009",
+    "title": "[NOIP 1998 普及组] 阶乘之和",
+    "url": "https://www.luogu.com.cn/problem/P1009",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-633A",
+    "title": "Ebony and Ivory",
+    "url": "https://codeforces.com/problemset/problem/633/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1010",
+    "title": "[NOIP 1998 普及组] 幂次方",
+    "url": "https://www.luogu.com.cn/problem/P1010",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "回溯",
+      "二分",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-556A",
+    "title": "Case of the Zeros and Ones",
+    "url": "https://codeforces.com/problemset/problem/556/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1011",
+    "title": "[NOIP 1998 提高组] 车站",
+    "url": "https://www.luogu.com.cn/problem/P1011",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-463B",
+    "title": "Caisa and Pylons",
+    "url": "https://codeforces.com/problemset/problem/463/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "模拟",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1014",
+    "title": "[NOIP 1999 普及组] Cantor 表",
+    "url": "https://www.luogu.com.cn/problem/P1014",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-368B",
+    "title": "Sereja and Suffixes",
+    "url": "https://codeforces.com/problemset/problem/368/B",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "动态规划"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1015",
+    "title": "[NOIP 1999 普及组] 回文数",
+    "url": "https://www.luogu.com.cn/problem/P1015",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-268A",
+    "title": "Games",
+    "url": "https://codeforces.com/problemset/problem/268/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1024",
+    "title": "[NOIP 2001 提高组] 一元三次方程求解",
+    "url": "https://www.luogu.com.cn/problem/P1024",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "二分",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-181A",
+    "title": "Series of Crimes",
+    "url": "https://codeforces.com/problemset/problem/181/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数组",
+      "数论",
+      "模拟"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1028",
+    "title": "[NOIP 2001 普及组] 数的计算",
+    "url": "https://www.luogu.com.cn/problem/P1028",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-118A",
+    "title": "String Task",
+    "url": "https://codeforces.com/problemset/problem/118/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1029",
+    "title": "[NOIP 2001 普及组] 最大公约数和最小公倍数问题",
+    "url": "https://www.luogu.com.cn/problem/P1029",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-35A",
+    "title": "Shell Game",
+    "url": "https://codeforces.com/problemset/problem/35/A",
+    "platform": "Codeforces",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "luogu-P1030",
+    "title": "[NOIP 2001 普及组] 求先序排列",
+    "url": "https://www.luogu.com.cn/problem/P1030",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "二叉树",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2260C",
+    "title": "Maximize XOR, Minimize Operations",
+    "url": "https://codeforces.com/problemset/problem/2260/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "位运算",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1036",
+    "title": "[NOIP 2002 普及组] 选数",
+    "url": "https://www.luogu.com.cn/problem/P1036",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2236D",
+    "title": "Brand New Tatar TV Show",
+    "url": "https://codeforces.com/problemset/problem/2236/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "贪心",
+      "动态规划",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1042",
+    "title": "[NOIP 2003 普及组] 乒乓球",
+    "url": "https://www.luogu.com.cn/problem/P1042",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2205C",
+    "title": "Simons and Posting Blogs",
+    "url": "https://codeforces.com/problemset/problem/2205/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1044",
+    "title": "[NOIP 2003 普及组] 栈",
+    "url": "https://www.luogu.com.cn/problem/P1044",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "数论",
+      "栈",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2178D",
+    "title": "Xmas or Hysteria",
+    "url": "https://codeforces.com/problemset/problem/2178/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1049",
+    "title": "[NOIP 2001 普及组] 装箱问题",
+    "url": "https://www.luogu.com.cn/problem/P1049",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2152B",
+    "title": "Catching the Krug",
+    "url": "https://codeforces.com/problemset/problem/2152/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1051",
+    "title": "[NOIP 2005 提高组] 谁拿了最多奖学金",
+    "url": "https://www.luogu.com.cn/problem/P1051",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2126E",
+    "title": "G-C-D, Unlucky!",
+    "url": "https://codeforces.com/problemset/problem/2126/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1059",
+    "title": "[NOIP 2006 普及组] 明明的随机数",
+    "url": "https://www.luogu.com.cn/problem/P1059",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2108C",
+    "title": "Neo's Escape",
+    "url": "https://codeforces.com/problemset/problem/2108/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "数组",
+      "动态规划",
+      "并查集",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1060",
+    "title": "[NOIP 2006 普及组] 开心的金明",
+    "url": "https://www.luogu.com.cn/problem/P1060",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2072C",
+    "title": "Creating Keys for StORages Has Become My Main Skill",
+    "url": "https://codeforces.com/problemset/problem/2072/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "位运算",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1062",
+    "title": "[NOIP 2006 普及组] 数列",
+    "url": "https://www.luogu.com.cn/problem/P1062",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2049B",
+    "title": "pspspsps",
+    "url": "https://codeforces.com/problemset/problem/2049/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "图论",
+      "模拟"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1067",
+    "title": "[NOIP 2009 普及组] 多项式输出",
+    "url": "https://www.luogu.com.cn/problem/P1067",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-2028B",
+    "title": "Alice's Adventures in Permuting",
+    "url": "https://codeforces.com/problemset/problem/2028/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "模拟",
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1071",
+    "title": "[NOIP 2009 提高组] 潜伏者",
+    "url": "https://www.luogu.com.cn/problem/P1071",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1997D",
+    "title": "Maximize the Root",
+    "url": "https://codeforces.com/problemset/problem/1997/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "图论",
+      "回溯",
+      "动态规划",
+      "贪心",
+      "二叉树"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1072",
+    "title": "[NOIP 2009 提高组] Hankson 的趣味题",
+    "url": "https://www.luogu.com.cn/problem/P1072",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1976C",
+    "title": "Job Interview",
+    "url": "https://codeforces.com/problemset/problem/1976/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "动态规划",
+      "贪心",
+      "模拟",
+      "数组",
+      "双指针"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1075",
+    "title": "[NOIP 2012 普及组] 质因数分解",
+    "url": "https://www.luogu.com.cn/problem/P1075",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "数论",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1945D",
+    "title": "Seraphim the Owl",
+    "url": "https://codeforces.com/problemset/problem/1945/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1077",
+    "title": "[NOIP 2012 普及组] 摆花",
+    "url": "https://www.luogu.com.cn/problem/P1077",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "前缀和",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1920C",
+    "title": "Partitioning the Array",
+    "url": "https://codeforces.com/problemset/problem/1920/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1086",
+    "title": "[NOIP 2004 普及组] 花生采摘",
+    "url": "https://www.luogu.com.cn/problem/P1086",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1893A",
+    "title": "Anonymous Informant",
+    "url": "https://codeforces.com/problemset/problem/1893/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "图论",
+      "回溯",
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1087",
+    "title": "[NOIP 2004 普及组] FBI 树",
+    "url": "https://www.luogu.com.cn/problem/P1087",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "回溯",
+      "二叉树",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1862E",
+    "title": "Kolya and Movie Theatre",
+    "url": "https://codeforces.com/problemset/problem/1862/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1088",
+    "title": "[NOIP 2004 普及组] 火星人",
+    "url": "https://www.luogu.com.cn/problem/P1088",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "回溯",
+      "数论",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1834C",
+    "title": "Game with Reversing",
+    "url": "https://codeforces.com/problemset/problem/1834/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "数论",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1091",
+    "title": "[NOIP 2004 提高组] 合唱队形",
+    "url": "https://www.luogu.com.cn/problem/P1091",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1797C",
+    "title": "Li Hua and Chess",
+    "url": "https://codeforces.com/problemset/problem/1797/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1093",
+    "title": "[NOIP 2007 普及组] 奖学金",
+    "url": "https://www.luogu.com.cn/problem/P1093",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "数论",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1769C1",
+    "title": "Подкрутка I",
+    "url": "https://codeforces.com/problemset/problem/1769/C1",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1097",
+    "title": "[NOIP 2007 提高组] 统计数字",
+    "url": "https://www.luogu.com.cn/problem/P1097",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1737B",
+    "title": "Ela's Fitness and the Luxury Number",
+    "url": "https://codeforces.com/problemset/problem/1737/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "模拟",
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1098",
+    "title": "[NOIP 2007 提高组] 字符串的展开",
+    "url": "https://www.luogu.com.cn/problem/P1098",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1702E",
+    "title": "Split Into Two Sets",
+    "url": "https://codeforces.com/problemset/problem/1702/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "并查集",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1100",
+    "title": "高低位交换",
+    "url": "https://www.luogu.com.cn/problem/P1100",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "字符串",
+      "数论",
+      "位运算",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1671D",
+    "title": "Insert a Progression",
+    "url": "https://codeforces.com/problemset/problem/1671/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1101",
+    "title": "单词方阵",
+    "url": "https://www.luogu.com.cn/problem/P1101",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "回溯",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1633D",
+    "title": "Make Them Equal",
+    "url": "https://codeforces.com/problemset/problem/1633/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1104",
+    "title": "生日",
+    "url": "https://www.luogu.com.cn/problem/P1104",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "字符串",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1606C",
+    "title": "Banknotes",
+    "url": "https://codeforces.com/problemset/problem/1606/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1105",
+    "title": "平台",
+    "url": "https://www.luogu.com.cn/problem/P1105",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "回溯",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1559D1",
+    "title": "Mocha and Diana (Easy Version)",
+    "url": "https://codeforces.com/problemset/problem/1559/D1",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "并查集",
+      "图论",
+      "二叉树"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1109",
+    "title": "学生分组",
+    "url": "https://www.luogu.com.cn/problem/P1109",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "贪心",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1536B",
+    "title": "Prinzessin der Verurteilung",
+    "url": "https://codeforces.com/problemset/problem/1536/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1115",
+    "title": "最大子段和",
+    "url": "https://www.luogu.com.cn/problem/P1115",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "贪心",
+      "二分",
+      "前缀和",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1505C",
+    "title": "Fibonacci Words",
+    "url": "https://codeforces.com/problemset/problem/1505/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1116",
+    "title": "车厢重组",
+    "url": "https://www.luogu.com.cn/problem/P1116",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1475E",
+    "title": "Advertising Agency",
+    "url": "https://codeforces.com/problemset/problem/1475/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "排序",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1130",
+    "title": "红牌",
+    "url": "https://www.luogu.com.cn/problem/P1130",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "动态规划",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1443C",
+    "title": "The Delivery Dilemma",
+    "url": "https://codeforces.com/problemset/problem/1443/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1138",
+    "title": "第 k 小整数",
+    "url": "https://www.luogu.com.cn/problem/P1138",
+    "platform": "洛谷",
+    "difficulty": 1,
+    "estMinutes": 25,
+    "tags": [
+      "模拟",
+      "排序",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T1/T2 基础题"
+  },
+  {
+    "id": "cf-1407C",
+    "title": "Chocolate Bunny",
+    "url": "https://codeforces.com/problemset/problem/1407/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "数论",
+      "双指针"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1007",
+    "title": "独木桥",
+    "url": "https://www.luogu.com.cn/problem/P1007",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1373D",
+    "title": "Maximum Sum on Even Positions",
+    "url": "https://codeforces.com/problemset/problem/1373/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "动态规划",
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1016",
+    "title": "[NOIP 1999 普及组/提高组] 旅行家的预算",
+    "url": "https://www.luogu.com.cn/problem/P1016",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1355A",
+    "title": "Sequence with Digits",
+    "url": "https://codeforces.com/problemset/problem/1355/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "模拟",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1022",
+    "title": "[NOIP 2000 普及组] 计算器的改良",
+    "url": "https://www.luogu.com.cn/problem/P1022",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1332C",
+    "title": "K-Complete Word",
+    "url": "https://codeforces.com/problemset/problem/1332/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "并查集",
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1023",
+    "title": "[NOIP 2000 普及组] 税收与补贴问题",
+    "url": "https://www.luogu.com.cn/problem/P1023",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1303C",
+    "title": "Perfect Keyboard",
+    "url": "https://codeforces.com/problemset/problem/1303/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1025",
+    "title": "[NOIP 2001 提高组] 数的划分",
+    "url": "https://www.luogu.com.cn/problem/P1025",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1272D",
+    "title": "Remove One Element",
+    "url": "https://codeforces.com/problemset/problem/1272/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1033",
+    "title": "[NOIP 2002 提高组] 自由落体",
+    "url": "https://www.luogu.com.cn/problem/P1033",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1249C1",
+    "title": "Good Numbers (easy version)",
+    "url": "https://codeforces.com/problemset/problem/1249/C1",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "模拟"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1045",
+    "title": "[NOIP 2003 普及组] 麦森数",
+    "url": "https://www.luogu.com.cn/problem/P1045",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1215C",
+    "title": "Swap Letters",
+    "url": "https://codeforces.com/problemset/problem/1215/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1056",
+    "title": "[NOIP 2008 普及组] 排座椅",
+    "url": "https://www.luogu.com.cn/problem/P1056",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1196C",
+    "title": "Robot Breakout",
+    "url": "https://codeforces.com/problemset/problem/1196/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1057",
+    "title": "[NOIP 2008 普及组] 传球游戏",
+    "url": "https://www.luogu.com.cn/problem/P1057",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1175B",
+    "title": "Catch Overflow!",
+    "url": "https://codeforces.com/problemset/problem/1175/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1058",
+    "title": "[NOIP 2008 普及组] 立体图",
+    "url": "https://www.luogu.com.cn/problem/P1058",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1148B",
+    "title": "Born This Way",
+    "url": "https://codeforces.com/problemset/problem/1148/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "数组",
+      "双指针",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1065",
+    "title": "[NOIP 2006 提高组] 作业调度方案",
+    "url": "https://www.luogu.com.cn/problem/P1065",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1118B",
+    "title": "Tanya and Candies",
+    "url": "https://codeforces.com/problemset/problem/1118/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1076",
+    "title": "[NOIP 2012 普及组] 寻宝",
+    "url": "https://www.luogu.com.cn/problem/P1076",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1093D",
+    "title": "Beautiful Graph",
+    "url": "https://codeforces.com/problemset/problem/1093/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1083",
+    "title": "[NOIP 2012 提高组] 借教室",
+    "url": "https://www.luogu.com.cn/problem/P1083",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二叉树",
+      "二分",
+      "前缀和",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1064B",
+    "title": "Equations of Mathematical Magic",
+    "url": "https://codeforces.com/problemset/problem/1064/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1090",
+    "title": "[NOIP 2004 提高组] 合并果子",
+    "url": "https://www.luogu.com.cn/problem/P1090",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "堆"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1036D",
+    "title": "Vasya and Arrays",
+    "url": "https://codeforces.com/problemset/problem/1036/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "双指针"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1096",
+    "title": "[NOIP 2007 普及组] Hanoi 双塔问题",
+    "url": "https://www.luogu.com.cn/problem/P1096",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "动态规划",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1006D",
+    "title": "Two Strings Swaps",
+    "url": "https://codeforces.com/problemset/problem/1006/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1103",
+    "title": "书本整理",
+    "url": "https://www.luogu.com.cn/problem/P1103",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "排序",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-992C",
+    "title": "Nastya and a Wardrobe",
+    "url": "https://codeforces.com/problemset/problem/992/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1106",
+    "title": "删数问题",
+    "url": "https://www.luogu.com.cn/problem/P1106",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "字符串",
+      "贪心",
+      "链表",
+      "栈"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-962A",
+    "title": "Equator",
+    "url": "https://codeforces.com/problemset/problem/962/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1107",
+    "title": "[BJWC2008] 雷涛的小猫",
+    "url": "https://www.luogu.com.cn/problem/P1107",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心",
+      "回溯"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-931C",
+    "title": "Laboratory Work",
+    "url": "https://codeforces.com/problemset/problem/931/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1110",
+    "title": "[ZJOI2007] 报表统计",
+    "url": "https://www.luogu.com.cn/problem/P1110",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二叉树",
+      "堆",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-911C",
+    "title": "Three Garlands",
+    "url": "https://codeforces.com/problemset/problem/911/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1111",
+    "title": "修复公路",
+    "url": "https://www.luogu.com.cn/problem/P1111",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "并查集",
+      "排序",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-883E",
+    "title": "Field of Wonders",
+    "url": "https://codeforces.com/problemset/problem/883/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1112",
+    "title": "波浪数",
+    "url": "https://www.luogu.com.cn/problem/P1112",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-845C",
+    "title": "Two TVs",
+    "url": "https://codeforces.com/problemset/problem/845/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1113",
+    "title": "[USACO02FEB] 杂务",
+    "url": "https://www.luogu.com.cn/problem/P1113",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-812C",
+    "title": "Sagheer and Nubian Market",
+    "url": "https://codeforces.com/problemset/problem/812/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "排序",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1118",
+    "title": "[USACO06FEB] Backward Digit Sums G/S",
+    "url": "https://www.luogu.com.cn/problem/P1118",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-774D",
+    "title": "Lie or Truth",
+    "url": "https://codeforces.com/problemset/problem/774/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1122",
+    "title": "最大子树和",
+    "url": "https://www.luogu.com.cn/problem/P1122",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-748B",
+    "title": "Santa Claus and Keyboard Check",
+    "url": "https://codeforces.com/problemset/problem/748/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1123",
+    "title": "取数游戏",
+    "url": "https://www.luogu.com.cn/problem/P1123",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-722C",
+    "title": "Destroying Array",
+    "url": "https://codeforces.com/problemset/problem/722/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "并查集",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1134",
+    "title": "[USACO3.2] 阶乘问题",
+    "url": "https://www.luogu.com.cn/problem/P1134",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-690C2",
+    "title": "Brain Network (medium)",
+    "url": "https://codeforces.com/problemset/problem/690/C2",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "二叉树",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1137",
+    "title": "旅行计划",
+    "url": "https://www.luogu.com.cn/problem/P1137",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-659E",
+    "title": "New Reform",
+    "url": "https://codeforces.com/problemset/problem/659/E",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "图论",
+      "回溯",
+      "并查集",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1140",
+    "title": "[ICPC 2001 Taejon R] 相似基因",
+    "url": "https://www.luogu.com.cn/problem/P1140",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "字符串",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-627B",
+    "title": "Factory Repairs",
+    "url": "https://codeforces.com/problemset/problem/627/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1141",
+    "title": "01迷宫",
+    "url": "https://www.luogu.com.cn/problem/P1141",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "并查集",
+      "队列",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-603A",
+    "title": "Alternative Thinking",
+    "url": "https://codeforces.com/problemset/problem/603/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1142",
+    "title": "[ECNA 1994] 轰炸",
+    "url": "https://www.luogu.com.cn/problem/P1142",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "排序",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-575D",
+    "title": "Tablecity",
+    "url": "https://codeforces.com/problemset/problem/575/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1154",
+    "title": "奶牛分厩",
+    "url": "https://www.luogu.com.cn/problem/P1154",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-538C",
+    "title": "Tourist's Notes",
+    "url": "https://codeforces.com/problemset/problem/538/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "数组",
+      "贪心",
+      "模拟",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1158",
+    "title": "[NOIP 2010 普及组] 导弹拦截",
+    "url": "https://www.luogu.com.cn/problem/P1158",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "排序",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-514A",
+    "title": "Chewbaсca and Number",
+    "url": "https://codeforces.com/problemset/problem/514/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1159",
+    "title": "[CHCI 2001 National Competition #2 Seniors] 排行榜",
+    "url": "https://www.luogu.com.cn/problem/P1159",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-482A",
+    "title": "Diverse Permutation",
+    "url": "https://codeforces.com/problemset/problem/482/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1160",
+    "title": "队列安排",
+    "url": "https://www.luogu.com.cn/problem/P1160",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "链表",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-448B",
+    "title": "Suffix Structures",
+    "url": "https://codeforces.com/problemset/problem/448/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1167",
+    "title": "刷题",
+    "url": "https://www.luogu.com.cn/problem/P1167",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数论",
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-417C",
+    "title": "Football",
+    "url": "https://codeforces.com/problemset/problem/417/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "图论",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1168",
+    "title": "中位数",
+    "url": "https://www.luogu.com.cn/problem/P1168",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二叉树",
+      "二分",
+      "堆",
+      "前缀和",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-386B",
+    "title": "Fly, freebies, fly!",
+    "url": "https://codeforces.com/problemset/problem/386/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二分",
+      "数组",
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1180",
+    "title": "驾车旅游",
+    "url": "https://www.luogu.com.cn/problem/P1180",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-354A",
+    "title": "Vasya and Robot",
+    "url": "https://codeforces.com/problemset/problem/354/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "贪心",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1182",
+    "title": "数列分段 Section II",
+    "url": "https://www.luogu.com.cn/problem/P1182",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "二分",
+      "前缀和"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-329A",
+    "title": "Purification",
+    "url": "https://codeforces.com/problemset/problem/329/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1188",
+    "title": "[COI 2001] PASTE",
+    "url": "https://www.luogu.com.cn/problem/P1188",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-297A",
+    "title": "Parity Game",
+    "url": "https://codeforces.com/problemset/problem/297/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1189",
+    "title": "[COI 2001] SEARCH",
+    "url": "https://www.luogu.com.cn/problem/P1189",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-276B",
+    "title": "Little Girl and Game",
+    "url": "https://codeforces.com/problemset/problem/276/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1005",
+    "title": "[NOIP 2007 提高组] 矩阵取数游戏",
+    "url": "https://www.luogu.com.cn/problem/P1005",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-245D",
+    "title": "Restoring Table",
+    "url": "https://codeforces.com/problemset/problem/245/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1012",
+    "title": "[NOIP 1998 提高组] 拼数",
+    "url": "https://www.luogu.com.cn/problem/P1012",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "字符串",
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-219D",
+    "title": "Choosing Capital for Treeland",
+    "url": "https://codeforces.com/problemset/problem/219/D",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "动态规划",
+      "二叉树",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1018",
+    "title": "[NOIP 2000 提高组] 乘积最大",
+    "url": "https://www.luogu.com.cn/problem/P1018",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-189B",
+    "title": "Counting Rhombi",
+    "url": "https://codeforces.com/problemset/problem/189/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1021",
+    "title": "[NOIP 1999 提高组] 邮票面值设计（疑似错题）",
+    "url": "https://www.luogu.com.cn/problem/P1021",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-166C",
+    "title": "Median",
+    "url": "https://codeforces.com/problemset/problem/166/C",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心",
+      "数论",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1027",
+    "title": "[NOIP 2001 提高组] Car 的旅行路线",
+    "url": "https://www.luogu.com.cn/problem/P1027",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-142A",
+    "title": "Help Farmer",
+    "url": "https://codeforces.com/problemset/problem/142/A",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1034",
+    "title": "[NOIP 2002 提高组] 矩形覆盖",
+    "url": "https://www.luogu.com.cn/problem/P1034",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-112B",
+    "title": "Petya and Square",
+    "url": "https://codeforces.com/problemset/problem/112/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1040",
+    "title": "[NOIP 2003 提高组] 加分二叉树",
+    "url": "https://www.luogu.com.cn/problem/P1040",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-81B",
+    "title": "Sequence Formatting",
+    "url": "https://codeforces.com/problemset/problem/81/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1052",
+    "title": "[NOIP 2005 提高组] 过河",
+    "url": "https://www.luogu.com.cn/problem/P1052",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-58B",
+    "title": "Coins",
+    "url": "https://codeforces.com/problemset/problem/58/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1064",
+    "title": "[NOIP 2006 提高组] 金明的预算方案",
+    "url": "https://www.luogu.com.cn/problem/P1064",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-36B",
+    "title": "Fractal",
+    "url": "https://codeforces.com/problemset/problem/36/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1073",
+    "title": "[NOIP 2009 提高组] 最优贸易",
+    "url": "https://www.luogu.com.cn/problem/P1073",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "回溯",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-17B",
+    "title": "Hierarchy",
+    "url": "https://codeforces.com/problemset/problem/17/B",
+    "platform": "Codeforces",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "回溯",
+      "并查集",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "luogu-P1082",
+    "title": "[NOIP 2012 提高组] 同余方程",
+    "url": "https://www.luogu.com.cn/problem/P1082",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-2215C",
+    "title": "Oriented Journey",
+    "url": "https://codeforces.com/problemset/problem/2215/C",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "位运算",
+      "数组",
+      "贪心",
+      "图论",
+      "二叉树"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1121",
+    "title": "环状最大两段子段和",
+    "url": "https://www.luogu.com.cn/problem/P1121",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-2129C1",
+    "title": "Interactive RBS (Easy Version)",
+    "url": "https://codeforces.com/problemset/problem/2129/C1",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "二分",
+      "位运算",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1126",
+    "title": "[CERC1996] 机器人搬重物",
+    "url": "https://www.luogu.com.cn/problem/P1126",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "队列",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-2013E",
+    "title": "Prefix GCD",
+    "url": "https://codeforces.com/problemset/problem/2013/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "动态规划",
+      "贪心",
+      "数论"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1131",
+    "title": "[ZJOI2007] 时态同步",
+    "url": "https://www.luogu.com.cn/problem/P1131",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1904D2",
+    "title": "Set To Max (Hard Version)",
+    "url": "https://codeforces.com/problemset/problem/1904/D2",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "贪心",
+      "数组",
+      "二分",
+      "模拟",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1133",
+    "title": "教主的花园",
+    "url": "https://www.luogu.com.cn/problem/P1133",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1787D",
+    "title": "Game on Axis",
+    "url": "https://codeforces.com/problemset/problem/1787/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数论",
+      "图论",
+      "回溯",
+      "并查集",
+      "模拟",
+      "数组"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1153",
+    "title": "点和线",
+    "url": "https://www.luogu.com.cn/problem/P1153",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1682D",
+    "title": "Circular Spanning Tree",
+    "url": "https://codeforces.com/problemset/problem/1682/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "贪心",
+      "模拟",
+      "数组",
+      "二叉树"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1169",
+    "title": "[ZJOI2007] 棋盘制作",
+    "url": "https://www.luogu.com.cn/problem/P1169",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "栈",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1569D",
+    "title": "Inconvenient Pairs",
+    "url": "https://codeforces.com/problemset/problem/1569/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "二分",
+      "数组",
+      "模拟",
+      "排序",
+      "双指针",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1175",
+    "title": "表达式的转换",
+    "url": "https://www.luogu.com.cn/problem/P1175",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数组",
+      "栈",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1475D",
+    "title": "Cleaning the Phone",
+    "url": "https://codeforces.com/problemset/problem/1475/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "二分",
+      "动态规划",
+      "排序",
+      "双指针",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1196",
+    "title": "[NOI2002] 银河英雄传说",
+    "url": "https://www.luogu.com.cn/problem/P1196",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "并查集",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1372D",
+    "title": "Omkar and Circle",
+    "url": "https://codeforces.com/problemset/problem/1372/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1198",
+    "title": "[JSOI2008] 最大数",
+    "url": "https://www.luogu.com.cn/problem/P1198",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "二叉树",
+      "二分",
+      "并查集",
+      "前缀和",
+      "栈",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1271E",
+    "title": "Common Number",
+    "url": "https://codeforces.com/problemset/problem/1271/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "二分",
+      "数论",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1213",
+    "title": "[IOI 1994 / USACO1.4] 时钟 The Clocks",
+    "url": "https://www.luogu.com.cn/problem/P1213",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1183E",
+    "title": "Subsequences (easy version)",
+    "url": "https://codeforces.com/problemset/problem/1183/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "图论",
+      "模拟",
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1225",
+    "title": "[CEOI 1999] 黑白棋游戏",
+    "url": "https://www.luogu.com.cn/problem/P1225",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "回溯",
+      "哈希表",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-1089A",
+    "title": "Alice the Fan",
+    "url": "https://codeforces.com/problemset/problem/1089/A",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1239",
+    "title": "计数器",
+    "url": "https://www.luogu.com.cn/problem/P1239",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-990E",
+    "title": "Post Lamps",
+    "url": "https://codeforces.com/problemset/problem/990/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1247",
+    "title": "取火柴游戏",
+    "url": "https://www.luogu.com.cn/problem/P1247",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-899E",
+    "title": "Segments Removal",
+    "url": "https://codeforces.com/problemset/problem/899/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "并查集",
+      "图论",
+      "模拟",
+      "双指针",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1260",
+    "title": "工程规划",
+    "url": "https://www.luogu.com.cn/problem/P1260",
+    "platform": "洛谷",
+    "difficulty": 2,
+    "estMinutes": 45,
+    "tags": [
+      "图论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T3 综合实现"
+  },
+  {
+    "id": "cf-813B",
+    "title": "The Golden Age",
+    "url": "https://codeforces.com/problemset/problem/813/B",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1050",
+    "title": "[NOIP 2005 普及组] 循环",
+    "url": "https://www.luogu.com.cn/problem/P1050",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "模拟",
+      "字符串",
+      "数论",
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-731D",
+    "title": "80-th Level Archeology",
+    "url": "https://codeforces.com/problemset/problem/731/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "贪心",
+      "排序"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1074",
+    "title": "[NOIP 2009 提高组] 靶形数独",
+    "url": "https://www.luogu.com.cn/problem/P1074",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "回溯",
+      "位运算",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-641E",
+    "title": "Little Artem and Time Machine",
+    "url": "https://codeforces.com/problemset/problem/641/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1128",
+    "title": "[HNOI2001] 求正整数",
+    "url": "https://www.luogu.com.cn/problem/P1128",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-551B",
+    "title": "ZgukistringZ",
+    "url": "https://codeforces.com/problemset/problem/551/B",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "贪心",
+      "模拟",
+      "字符串"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1221",
+    "title": "最多因子数",
+    "url": "https://www.luogu.com.cn/problem/P1221",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-472D",
+    "title": "Design Tutorial: Inverse the Problem",
+    "url": "https://codeforces.com/problemset/problem/472/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "图论",
+      "回溯",
+      "并查集",
+      "二叉树",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1254",
+    "title": "扇区填数",
+    "url": "https://www.luogu.com.cn/problem/P1254",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-385D",
+    "title": "Bear and Floodlight",
+    "url": "https://codeforces.com/problemset/problem/385/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "位运算",
+      "动态规划",
+      "数论",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1272",
+    "title": "[USACO02FEB] 重建道路",
+    "url": "https://www.luogu.com.cn/problem/P1272",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-313D",
+    "title": "Ilya and Roads",
+    "url": "https://codeforces.com/problemset/problem/313/D",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1306",
+    "title": "斐波那契公约数",
+    "url": "https://www.luogu.com.cn/problem/P1306",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数论",
+      "二叉树",
+      "数组",
+      "回溯",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-228C",
+    "title": "Fractal Detector",
+    "url": "https://codeforces.com/problemset/problem/228/C",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "哈希表",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1368",
+    "title": "工艺",
+    "url": "https://www.luogu.com.cn/problem/P1368",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-153B",
+    "title": "Binary notation",
+    "url": "https://codeforces.com/problemset/problem/153/B",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1386",
+    "title": "座位安排",
+    "url": "https://www.luogu.com.cn/problem/P1386",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-72E",
+    "title": "Ali goes shopping",
+    "url": "https://codeforces.com/problemset/problem/72/E",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "数组",
+      "字符串",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "luogu-P1397",
+    "title": "[NOI2013] 矩阵游戏",
+    "url": "https://www.luogu.com.cn/problem/P1397",
+    "platform": "洛谷",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "动态规划",
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
+  },
+  {
+    "id": "cf-27C",
+    "title": "Unordered Subsequence",
+    "url": "https://codeforces.com/problemset/problem/27/C",
+    "platform": "Codeforces",
+    "difficulty": 3,
+    "estMinutes": 70,
+    "tags": [
+      "贪心"
+    ],
+    "competitions": [
+      "CCF CSP"
+    ],
+    "cspRole": "T4/T5 进阶题"
   }
 ]

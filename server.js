@@ -45,6 +45,7 @@ const DEFAULT_CONFIG = {
   theme: 'warm',
   scopeTags: [
     '数组',
+    '模拟',
     '哈希表',
     '双指针',
     '滑动窗口',

@@ -597,6 +597,8 @@ test('JSON 题库导入会拒绝非法链接并按 URL 去重', () => {
         platform: '洛谷',
         difficulty: 2,
         tags: ['动态规划'],
+        competitions: ['CCF CSP'],
+        cspRole: '核心算法',
       },
       {
         title: '非法题',
@@ -611,6 +613,8 @@ test('JSON 题库导入会拒绝非法链接并按 URL 去重', () => {
 
   assert.equal(result.added.length, 1);
   assert.equal(result.added[0].title, '新题');
+  assert.deepEqual(result.added[0].competitions, ['CCF CSP']);
+  assert.equal(result.added[0].cspRole, '核心算法');
   assert.equal(result.duplicates, 1);
   assert.ok(result.errors.length >= 1);
 });

@@ -328,6 +328,9 @@ function scoreGoalMatch(problem, profile = {}, activePhase = null) {
     ...(Array.isArray(profile.focusTags) ? profile.focusTags : []),
     ...(Array.isArray(activePhase?.focusTags) ? activePhase.focusTags : []),
   ]);
+  if (focusTags.has('大模拟')) {
+    focusTags.add('模拟');
+  }
   const problemTags = Array.isArray(problem.tags) ? problem.tags : [];
   const tagMatch = problemTags.some((tag) => focusTags.has(tag)) ? 1 : 0;
   const preferredPlatforms = Array.isArray(profile.preferredPlatforms)
