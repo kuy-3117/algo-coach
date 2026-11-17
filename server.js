@@ -164,16 +164,24 @@ function readJson(filePath) {
   }
 }
 
-function atomicWriteJson(filePath, value) {
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+function atomicWriteJson(filePath, value, fsOperations = fs) {
+  fsOperations.mkdirSync(path.dirname(filePath), { recursive: true });
   atomicCounter++;
   const tempPath = `${filePath}.${process.pid}.${atomicCounter}.tmp`;
   try {
-    fs.writeFileSync(tempPath, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
-    fs.renameSync(tempPath, filePath);
+    fsOperations.writeFileSync(tempPath, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+    try {
+      fsOperations.renameSync(tempPath, filePath);
+    } catch (error) {
+      if (!['EXDEV', 'EPERM'].includes(error.code)) {
+        throw error;
+      }
+      fsOperations.copyFileSync(tempPath, filePath);
+      fsOperations.rmSync(tempPath, { force: true });
+    }
   } catch (error) {
     try {
-      fs.rmSync(tempPath, { force: true });
+      fsOperations.rmSync(tempPath, { force: true });
     } catch {
       // 清理失败不覆盖原始错误。
     }
@@ -272,8 +280,8 @@ function sanitizeConfigForExport(config) {
   };
 }
 
-function writeExportBundle(rootDir, dataDir) {
-  const exportsDir = path.join(rootDir, 'exports');
+function writeExportBundle(rootDir, dataDir, customExportDir) {
+  const exportsDir = customExportDir || path.join(rootDir, 'exports');
   fs.mkdirSync(exportsDir, { recursive: true });
   const bundle = {
     version: 2,
@@ -710,7 +718,7 @@ function serveStatic(publicDir, pathname, request, response) {
   }
 }
 
-function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
+function createAppServer({ rootDir = __dirname, dataDir, publicDir, exportDir } = {}) {
   const resolvedDataDir = dataDir || path.join(rootDir, 'data');
   const resolvedPublicDir = publicDir || path.join(rootDir, 'public');
   ensureDataFiles(resolvedDataDir);
@@ -733,7 +741,7 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir } = {}) {
       }
 
       if (request.method === 'GET' && pathname === '/api/export') {
-        const result = writeExportBundle(rootDir, resolvedDataDir);
+        const result = writeExportBundle(rootDir, resolvedDataDir, exportDir);
         const body = Buffer.from(`${JSON.stringify(result.bundle, null, 2)}\n`, 'utf8');
         response.writeHead(200, {
           'Content-Type': 'application/json; charset=utf-8',

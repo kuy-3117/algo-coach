@@ -19,6 +19,7 @@ const {
 const {
   BUILTIN_PROBLEMS,
   createAppServer,
+  atomicWriteJson,
   ensureDataFiles,
   appendEvent,
   isLoopbackAddress,
@@ -478,6 +479,29 @@ test('事件写入前备份，并且只保留最近五份', () => {
     const backups = fs.readdirSync(path.join(tempDir, 'backup')).filter((name) => name.endsWith('.json'));
     assert.equal(events.length, 7);
     assert.equal(backups.length, 5);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('原子写入遇到 Windows EXDEV 时回退为同目录复制', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'algo-coach-exdev-'));
+  const target = path.join(tempDir, 'state.json');
+  const fsOperations = {
+    ...fs,
+    renameSync() {
+      const error = new Error('cross-device link not permitted');
+      error.code = 'EXDEV';
+      throw error;
+    },
+  };
+  try {
+    atomicWriteJson(target, { ok: true }, fsOperations);
+    assert.deepEqual(JSON.parse(fs.readFileSync(target, 'utf8')), { ok: true });
+    assert.equal(
+      fs.readdirSync(tempDir).some((name) => name.endsWith('.tmp')),
+      false,
+    );
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

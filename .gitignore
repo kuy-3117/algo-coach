@@ -1,4 +1,5 @@
 node_modules/
+dist/
 *.tmp
 *.log
 data/backup/*.json
@@ -7,6 +8,5 @@ data/config.json
 data/plan.json
 data/reports.json
 exports/*.json
-public/assets/warm-ai-*.png
 .DS_Store
 Thumbs.db

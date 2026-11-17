@@ -144,6 +144,23 @@
             <details>
               <summary>AI 与数据设置</summary>
               <div class="settings-body">
+                <div class="desktop-security" id="desktop-security" hidden>
+                  <h4>桌面版安全存储</h4>
+                  <p class="helper-text">
+                    API Key 使用 Windows 系统加密保存在本机，不会写入配置、导出包或安装目录。
+                  </p>
+                  <div class="desktop-key-row">
+                    <input id="desktop-api-key" type="password" autocomplete="off" placeholder="输入自己的 DeepSeek API Key">
+                    <button class="button button-secondary" id="save-desktop-key-button" type="button">安全保存</button>
+                    <button class="button button-quiet" id="clear-desktop-key-button" type="button">清除</button>
+                  </div>
+                  <p class="helper-text" id="desktop-key-status"></p>
+                  <div class="inline-actions">
+                    <button class="button button-quiet" id="open-data-folder-button" type="button">打开数据目录</button>
+                    <button class="button button-quiet" id="open-exports-folder-button" type="button">打开导出目录</button>
+                  </div>
+                  <hr>
+                </div>
                 <div class="ai-status" id="ai-status"></div>
                 <div class="form-grid">
                   <label class="field">

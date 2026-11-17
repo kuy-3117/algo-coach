@@ -15,6 +15,7 @@ let sessionCustomItems = [];
 let pendingAiSelections = [];
 let importTextValue = '';
 let toastTimer = null;
+const desktopApi = window.algoCoachDesktop || null;
 
 const $ = (selector) => document.querySelector(selector);
 const elements = {
@@ -42,6 +43,13 @@ const elements = {
   planBookContent: $('#plan-book-content'),
   regeneratePlanButton: $('#regenerate-plan-button'),
   aiStatus: $('#ai-status'),
+  desktopSecurity: $('#desktop-security'),
+  desktopApiKey: $('#desktop-api-key'),
+  desktopKeyStatus: $('#desktop-key-status'),
+  saveDesktopKeyButton: $('#save-desktop-key-button'),
+  clearDesktopKeyButton: $('#clear-desktop-key-button'),
+  openDataFolderButton: $('#open-data-folder-button'),
+  openExportsFolderButton: $('#open-exports-folder-button'),
   aiBaseUrl: $('#ai-base-url'),
   aiModel: $('#ai-model'),
   saveAiSettingsButton: $('#save-ai-settings-button'),
@@ -253,6 +261,8 @@ function renderPlan() {
 
   elements.aiBaseUrl.value = state.ai.baseUrl;
   elements.aiModel.value = state.ai.model;
+  elements.desktopSecurity.hidden = !desktopApi;
+  if (desktopApi) refreshDesktopKeyStatus();
   elements.aiStatus.textContent = state.ai.configured
     ? `DeepSeek 兼容接口已连接配置：${state.ai.model}`
     : '尚未检测到 DeepSeek 密钥。请在 Windows 用户环境变量中设置 DEEPSEEK_API_KEY 后重启服务。';
@@ -283,6 +293,49 @@ function renderPlan() {
       `).join('')}
     </div>
   `;
+}
+
+async function refreshDesktopKeyStatus() {
+  if (!desktopApi) return;
+  try {
+    const status = await desktopApi.getApiKeyStatus();
+    elements.desktopKeyStatus.textContent = status.configured
+      ? `密钥已保存${status.encryptedAtRest ? '（Windows 加密存储）' : ''}`
+      : '尚未保存 API Key；本地功能仍可正常使用。';
+    elements.clearDesktopKeyButton.disabled = !status.configured;
+  } catch (error) {
+    elements.desktopKeyStatus.textContent = `无法读取密钥状态：${error.message}`;
+  }
+}
+
+async function saveDesktopKey() {
+  if (!desktopApi) return;
+  const key = elements.desktopApiKey.value.trim();
+  if (!key) return showToast('请输入 API Key', true);
+  elements.saveDesktopKeyButton.disabled = true;
+  try {
+    await desktopApi.saveApiKey(key);
+    elements.desktopApiKey.value = '';
+    await refreshDesktopKeyStatus();
+    await loadState();
+    showToast('API Key 已安全保存');
+  } catch (error) {
+    showToast(error.message, true);
+  } finally {
+    elements.saveDesktopKeyButton.disabled = false;
+  }
+}
+
+async function clearDesktopKey() {
+  if (!desktopApi) return;
+  try {
+    await desktopApi.clearApiKey();
+    await refreshDesktopKeyStatus();
+    await loadState();
+    showToast('API Key 已从本机清除');
+  } catch (error) {
+    showToast(error.message, true);
+  }
 }
 
 function reportList(items) {
@@ -733,6 +786,10 @@ elements.customForm.addEventListener('submit', submitCustom);
 elements.profileForm.addEventListener('submit', submitProfile);
 elements.regeneratePlanButton.addEventListener('click', regeneratePlan);
 elements.saveAiSettingsButton.addEventListener('click', saveAiSettings);
+elements.saveDesktopKeyButton?.addEventListener('click', saveDesktopKey);
+elements.clearDesktopKeyButton?.addEventListener('click', clearDesktopKey);
+elements.openDataFolderButton?.addEventListener('click', () => desktopApi?.openDataDirectory());
+elements.openExportsFolderButton?.addEventListener('click', () => desktopApi?.openExportsDirectory());
 elements.dailyReportButton.addEventListener('click', () => generateReport('daily'));
 elements.weeklyReportButton.addEventListener('click', () => generateReport('weekly'));
 elements.aiSelectButton.addEventListener('click', requestAiSelections);

@@ -1,0 +1,61 @@
+{
+  "name": "algo-coach",
+  "version": "1.0.0",
+  "description": "本地优先的算法学习规划、记录与 AI 复盘桌面应用",
+  "author": "AlgoCoach",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node test.js",
+    "dist:win": "electron-builder --win nsis --x64",
+    "pack:win": "electron-builder --dir --win --x64"
+  },
+  "devDependencies": {
+    "electron": "45.3.3",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.algocoach.desktop",
+    "productName": "算法学习教练",
+    "asar": true,
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "algo.js",
+      "ai.js",
+      "importer.js",
+      "server.js",
+      "electron/**/*",
+      "public/**/*",
+      "data/problems.json",
+      "README.md",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "AlgoCoach-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "算法学习教练",
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh"
+    },
+    "publish": null
+  }
+}

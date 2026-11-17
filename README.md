@@ -6,6 +6,47 @@
 
 它不是题库、判题器或代码执行器。内置题目只保存平台链接，点击后跳转到洛谷或 Codeforces。
 
+## Windows 桌面版
+
+到本仓库的 `Releases` 页面下载最新版：
+
+[下载最新 Windows 安装包](../../releases/latest)
+
+系统要求：Windows 10/11 x64。
+
+安装包为 `AlgoCoach-Setup-<版本>.exe`，采用当前用户安装，不需要管理员权限。安装后会创建桌面和开始菜单快捷方式。
+
+首版没有代码签名证书，因此 Windows 可能显示“未知发布者”。可以在 PowerShell 中核验下载文件：
+
+```powershell
+Get-FileHash .\AlgoCoach-Setup-1.0.0.exe -Algorithm SHA256
+```
+
+结果应与 Release 中的 `SHA256SUMS.txt` 一致。
+
+桌面版的数据与程序分离：
+
+- 数据：`%USERPROFILE%\Documents\AlgoCoach\data`
+- 导出：`%USERPROFILE%\Documents\AlgoCoach\exports`
+- 启动日志：`%USERPROFILE%\Documents\AlgoCoach\desktop.log`
+
+桌面版使用 Windows DPAPI 加密保存用户自己的 API Key。卸载应用不会删除学习数据。
+
+### 从源码运行
+
+```powershell
+npm install
+npm start
+```
+
+### 本地构建 Windows 安装包
+
+```powershell
+npm run dist:win
+```
+
+安装包输出到 `dist/AlgoCoach-Setup-<版本>.exe`。推送 `v1.0.0` 这类 Git 标签时，GitHub Actions 会自动构建并发布到 Releases。
+
 ## 启动
 
 需要 Node.js 18 或更高版本，不需要安装 npm 依赖：
@@ -100,7 +141,7 @@ AI 调用只由按钮触发，不会后台自动计费。日报会发送当天�
 
 ## 角色素材
 
-`public/assets/warm-ai-hero.png`、`warm-ai-sheet.png` 和裁切头像仅用于本地私人界面。相关文件已加入 `.gitignore`，不会被公开仓库提交。图片缺失时页面保留普通布局，不阻塞核心功能。
+`public/assets/warm-ai-hero.png`、`warm-ai-sheet.png` 和裁切头像会随桌面安装包一起发布。图片缺失时页面保留普通布局，不阻塞核心功能。
 
 ## 测试
 
