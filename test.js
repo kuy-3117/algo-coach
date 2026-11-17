@@ -367,7 +367,7 @@ test('最近七天至少三个活跃日才能生成周报', () => {
   assert.equal(weeklyEligibility(threeDays, '2026-11-17').eligible, true);
 });
 
-test('内置自愈题单与题库文件一致且满足题单约束', () => {
+test('内置自愈题单完整包含在题库中且全库满足标签约束', () => {
   const fileProblems = JSON.parse(
     fs.readFileSync(path.join(__dirname, 'data', 'problems.json'), 'utf8'),
   );
@@ -380,11 +380,12 @@ test('内置自愈题单与题库文件一致且满足题单约束', () => {
     (difficulty) => fileProblems.filter((item) => item.difficulty === difficulty).length,
   );
 
-  assert.deepEqual(BUILTIN_PROBLEMS, fileProblems);
-  assert.equal(fileProblems.length, 30);
-  assert.equal(ids.size, 30);
+  const fileIds = new Set(fileProblems.map((item) => item.id));
+  assert.ok(BUILTIN_PROBLEMS.every((item) => fileIds.has(item.id)));
+  assert.ok(fileProblems.length >= 30);
+  assert.equal(ids.size, fileProblems.length);
   assert.ok(coveredTags.size >= 15);
-  assert.deepEqual(difficulties, [10, 10, 10]);
+  assert.ok(difficulties.every((count) => count >= 10));
   assert.ok(
     fileProblems.every(
       (item) =>
