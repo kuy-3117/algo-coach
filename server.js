@@ -736,7 +736,10 @@ function createAppServer({ rootDir = __dirname, dataDir, publicDir, exportDir } 
       }
 
       if (request.method === 'GET' && pathname === '/api/state') {
-        sendJson(response, 200, createState(resolvedDataDir, remoteAddress));
+        const requestedDate = requestUrl.searchParams.get('date');
+        const stateDate =
+          requestedDate && isValidDate(requestedDate) ? requestedDate : localDate();
+        sendJson(response, 200, createState(resolvedDataDir, remoteAddress, stateDate));
         return;
       }
 
