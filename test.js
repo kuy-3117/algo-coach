@@ -18,6 +18,7 @@ const {
 } = require('./algo');
 const {
   BUILTIN_PROBLEMS,
+  DEFAULT_CONFIG,
   createAppServer,
   atomicWriteJson,
   ensureDataFiles,
@@ -372,9 +373,7 @@ test('内置自愈题单完整包含在题库中且全库满足标签约束', ()
   const fileProblems = JSON.parse(
     fs.readFileSync(path.join(__dirname, 'data', 'problems.json'), 'utf8'),
   );
-  const fileConfig = JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'data', 'config.json'), 'utf8'),
-  );
+  const fileConfig = DEFAULT_CONFIG;
   const ids = new Set(fileProblems.map((item) => item.id));
   const coveredTags = new Set(fileProblems.flatMap((item) => item.tags));
   const difficulties = [1, 2, 3].map(
@@ -668,7 +667,7 @@ test('换题接口只替换目标题并保持其他题不变', async () => {
     const address = server.address();
     const baseUrl = `http://127.0.0.1:${address.port}`;
     try {
-      const before = await (await fetch(`${baseUrl}/api/state`)).json();
+      const before = await (await fetch(`${baseUrl}/api/state?date=2026-11-17`)).json();
       const beforeIds = before.plan.items.map((item) => item.p.id);
       const response = await fetch(`${baseUrl}/api/swap`, {
         method: 'POST',
@@ -678,7 +677,11 @@ test('换题接口只替换目标题并保持其他题不变', async () => {
       const after = await response.json();
       const afterIds = after.state.plan.items.map((item) => item.p.id);
       assert.notEqual(afterIds[0], beforeIds[0]);
-      assert.deepEqual(afterIds.slice(1), beforeIds.slice(1));
+      assert.deepEqual(
+        afterIds.slice(1),
+        beforeIds.slice(1),
+        JSON.stringify({ beforeIds, afterIds }),
+      );
     } finally {
       await new Promise((resolve) => server.close(resolve));
     }
